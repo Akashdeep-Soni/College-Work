@@ -29,7 +29,7 @@ if __name__=="__main__":
     llist=linkedlist()
     if llist.head==None:
         print("HI")
-    
+        
     n=int(input("Enter number of elemenets: "))
     for _ in range(n):
         val=int(input("Enter data: "))
