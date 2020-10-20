@@ -1,0 +1,222 @@
+import java.lang.*;
+import java.io.*;
+class Sum{
+public static void main(String[] a){
+int a;
+int b;
+int c = a+b;
+System.out.println("Sum is:"+c);
+}
+}
+Compiler: javac Sum.java
+
+Target program/code: Sum.class  ---> Bytecode
+
+java Sum 2 7
+ 
+Output: 9
+
+============================================================
+
+#include<stdio.h>
+void main(){
+int a;
+int b; // identifies errors and generates error messages/warning messages
+int c = a + b;
+}
+
+Compilation: gcc Sum.c ......
+
+target program/code: .... .exe
+
+.\a.out ... .exe  7 8
+
+==============================================================
+
+a = ......
+b = ......
+c = a + b
+print(c)
+
+py Sum.py 2 4
+
+=============================================================================================
+
+
+Symbol table:Identifiers [name, type, scope, lifetime ....]
+Symbol table is data structure which can be implemented using arrays/list/trees/hash table
+
+============================================================================================
+Language Processing System/Cousins of Compiler:
+
+a)Preprocessor:
+b)Compiler:
+c)Assembler:
+d)Linker/Loader:
+
+a) Preprocessor: Takes the HLL or source program as input
+                 handles preprocessing system
+		 produces modified source code as output
+
+#include<stdio.h> ===> File Inclusion
+#define x = 6  ===> macro expansion
+int  a = x;
+int y =         8; --> int y=8; ===> removes whitespaces
+int z 
+ 
+= 
+
+9;  --> int z=9; ===> removes newline 
+
+if(x>5){      // if statement to check whether x > 5
+printf("x is greater than five");  
+}
+	
+-->  if(x>5){  
+printf("x is greater than five");  ===> Removing comments
+}
+
+typedef int i; --> int a; ===>  resolves the typedefs
+i a;
+
+b) Compiler: input is modified source program
+             Translates, error, warning, symbol table
+             outputs target/assemble language
+
+c) Assembler :input as assembly code
+	      output is relocatable machine code
+
+d) Loader and Linker:  
+   Loader brings the program from secondary memory to main memory
+   Linker links various modules i.e. links relocatable machine codes 
+   of various files/library files and combine them to produce as single exectable file
+  
+==============================================================================
+20/08/2020
+
+Models of Compiler:
+1> Analysis: 
+ a. Divides the source program into tokens(LA)
+ b. Groups the tokens into syntactic structure (SyA)
+ c. Verifies the syntax (SeA)
+ d. Intermediate code generation(ICG)
+b> Synthesis 
+  a. machine independent code optimization
+  b. Machine dependent code generation and machine dependent code-optimization
+ 
+
+Phases of Compiler
+1.Lexical Analysis(LA)/Scaning
+2.Syntax Analysis(SyA)/Parsing
+3.Semantic Analysis(SeA)/Type Checker
+4.Code Generation
+5.Code Optimization
+6.Machine dependent Code generation & Machine dependent Code Optimization
+
+1> Lexical Analysis(LA): Reads the stream of characters making up the source program and groups the 
+                         characters into meaningful sequences called lexemes.	
+                         For each lexeme, the LA produces as output a token <token-name, attribute-value>
+                         a. removes whitespaces, tabs, comments, newlines
+			 b. creates storage for identifier in the symbol table
+			 c. maintains line number of a program
+
+  e.g. inti main(){
+       printf("Hi");
+       }
+
+   'i' 'n' 't' 'i' ',' 'm' 'a' 'i' 'n' ......
+
+According to the given regular expression & regular definition, LA groups the characters.
+
+lexeme: int, main 
+
+regular definition
+
+l--> _|a|b|c|....|z|A|B|C|...|Z
+d --> 0|1|2|...|9
+
+eg _abc,_1, a, cb
+
+id --> l(l|d)*
+
+rollno --> year college branch code seqno
+
+eg.
+ 
+a. int x=5
+   int --> <int>
+ x   --> <id,1>
+ =   --> <=>
+ 5   --> <5>
+
+<token-name, attribute-value>:
+token-name : abstract symbol used during syntax analysis
+attribute-value : points to an entry in the symbol table
+
+b. x=a+b*20
+   x --> <id,1>
+   = --> <=>
+   a --> <id,2>
+   + --> <+>
+   b --> <id,3>
+   * --> <*>
+   20 -> <20>
+
+ id1= id2+id3*20
+
+2> Syntax Analysis: Uses the first component of the token stream produced by LA to create tree-like intermediate representation that                     
+		    depicts the grammatical-structure of the token stream using CFG
+                    Interior nodes represents operations
+		    child nodes represents the arguments of the operations
+			
+                   x = 5 or 5 = x
+
+                    S-->id=E;
+		    E-->E+T|T
+		    T-->T*F|F
+		    F-->id|num
+
+                    x=a+b*20;
+
+3.Semantic Analysis: Type checking or coercion(automatic type casting) : verifies the parse tree & information stored in the symbol table
+			int x = (int)30.9;  --> narrowing --> explicit
+			float y = 30; --> widening --> implicit --> coercion
+			float i = 3.5;
+			a[i] = 30;
+			
+			id1= id2+id3*20
+ 			id3 --> float
+			
+			typecasttofloat(20) --> 20.0
+			
+			id1=id2+id3*typecasttofloat(20)
+
+4. Intermediate Code Generation: generates intermediate representation(IR)
+				 IR must be easier to produce
+
+ 				3-address code --> quadruple, triples and indirect triples
+			
+				t1 = typecasttofloat(20)
+				t2 = id3*t1
+				t3 = id2+t2
+				id1 = t3
+
+5. Code Optimization(Machine independent) : Improve the IR so that better(faster, shorter) target code will result
+					
+				
+				t1 =  id3*20.0 [t1 = typecasttofloat(20) and t2 = id3*t1]
+				id1 = id2+t1   [t3 = id2+t2  and id1 = t3]
+
+6. Target Code Generation & Code Optimization(Machine Dependent): Input : Optimized IR
+			
+					LDF R1, id3
+					MULF R1, R1, 20.0
+					LDF R2, id2
+					ADDF R2, R2, R1
+					STF id1, R2
+					
+							
+
+						
+
+				
