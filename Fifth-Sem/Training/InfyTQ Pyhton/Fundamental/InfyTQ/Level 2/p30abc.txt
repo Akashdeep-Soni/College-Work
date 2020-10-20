@@ -1,4 +1,0 @@
-1 1 Hello
-2 2 My name
-3 3 is 
-4 4 Akash Deep Soni
