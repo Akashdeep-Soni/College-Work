@@ -1,0 +1,5 @@
+n = int(input("Enter How many last lines? "))
+f = open('p1abc.txt','r')
+l = f.readlines()
+print(*l[-n:],sep="")
+f.close()

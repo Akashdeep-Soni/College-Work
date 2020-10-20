@@ -1,0 +1,230 @@
+TCS_OLT_2_20201005
+================================================
+
+1.	What should the program below print?
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+void myfunc(char** param){
+++param;
+}
+int main(){
+char* string = (char*)malloc(64);
+strcpy(string, “hello_World”);
+myfunc(&string);
+myfunc(&string);
+printf(“%s”, string);
+// ignore memory leak for sake of quiz
+return 0;
+}
+A. hello_World
+B. ello_World
+C. lo_World
+D. llo_World
+
+Ans:A
+
+2.	What will happen if in a C program you assign a value to an array element whose subscript exceeds the size of array?
+A. The element will be set to 0.
+B. The compiler would report an error.
+C. The program may crash if some important data gets overwritten.
+D. The array size would appropriately grow.
+Answer: Option C
+
+3.	What does the following declaration mean?
+int (*ptr)[10];
+A.ptr is array of pointers to 10 integers
+B.ptr is a pointer to an array of 10 integers
+C.ptr is an array of 10 integers
+D.ptr is an pointer to array
+Answer: Option B
+
+4.	What will be the output of the program ?
+#include<stdio.h>
+int main()
+{
+    int a[5] = {5, 1, 15, 20, 25};
+    int i, j, m;
+    i = ++a[1];
+    j = a[1]++;
+    m = a[i++];
+    printf(“%d, %d, %d”, i, j, m);
+    return 0;
+}
+A.2, 1, 15             
+B.1, 2, 5
+C.3, 2, 15             
+D.2, 3, 20
+Answer: Option C
+
+
+5.	What are the types of linkages?
+A.Internal and External
+B.External, Internal and None
+C.External and None     
+D.Internal
+Answer: Option B
+
+Explanation:
+External pnkage-> means global, non-static variables and functions.
+Internal pnkage-> means static variables and functions with file scope.
+None pnkage-> means Local variable
+
+
+6.	Is there any difference between following declarations?
+1 : extern int fun();
+2 : int fun();
+A.Both are identical
+B.No difference, except extern int fun(); is probably in another file
+C.int fun(); is overrided with extern int fun();
+D.None of these
+
+Answer: Option B
+Explanation:
+extern int fun(); declaration in C is to indicate the existence of a global function and it is defined externally to the current module or in another file.
+int fun(); declaration in C is to indicate the existence of a function inside the current module or in the same file.
+Do tell us if you found these questions useful!
+Here are the next set of questions for you! We will be posting 10 Technical questions every day for your preparation. Happy learning!
+
+7.	How would you round off a value from 1.66 to 2.0?
+A. ceil (1.66)
+B. floor (1.66)
+C. roundup (1.66)
+D. Round to (1.66)
+Answer: A
+
+8.	What will be the output of the program?
+#include<stdio.h>
+int X=40;
+int main()
+{
+    int X=20;
+    printf(“%d\n”, X);
+    return 0;
+}
+A.20
+B.40
+C.Error
+D.No Output
+Answer:  A
+
+
+9.	What is output of following code:
+                   main()
+	   {
+		char a=128;
+		unsigned char b=256;
+		printf("%d%d",a,b);
+	    }
+
+A. 0,0
+B. 128,256
+C. -128,0
+D. 127,255
+Output: C
+
+
+10.	Find the output in 16-bit compiler.
+     main()
+	 {
+		unsigned a=-1;
+		printf("%u“,a);
+		printf("%u",++a);
+	    }
+
+a. -1,0
+b. compiler error
+c. 65635,0
+d. None of these
+
+Ans:C
+
+
+11.	main()
+	   {
+		int a=2,b=2;
+		if(a>>b)
+		  printf("a and b are equal");
+		else
+		  printf("a and b are not equal");
+	   }
+
+A. a and b are equal
+B.a and b are not equal
+C. Compiler Error
+D. None of these
+
+Ans: B
+
+12.	main()
+	   {
+		int a=10,b=20;
+		if(a==b);
+		  printf("a and b are equal");
+		else
+		  printf("a and b are not equal");
+	   }
+
+A. a and b are equal
+B.a and b are not equal
+C. Compiler Error
+D. None of these
+
+Ans: C
+
+13. main()
+	    {
+		int expr=2,j=1;
+		switch(expr)
+		{
+		case j:
+		  printf("This is case 1");
+		case 2:
+		  printf("This is case 2"); break;
+		default:
+		  printf("This is default case");
+		}
+	    }
+
+A. This is case 1
+B. This is case 2
+C. This is case 1 This is case 2
+D. Compiler Error
+
+Ans: D
+
+14.  main()
+	{
+		 int i=1;
+		for(  ;   ;  )
+		{
+		  printf("%d",i);
+		  if(i==5)
+		    break;
+		} 	    
+	} 	
+
+A: 1 1 1 …infinite times
+B. 1,2,3,4,5
+C. Compiler Error
+D. None of these
+
+Ans: A
+
+15. int SOD(int a,int b)
+{
+	int sum=a+b;
+	int diff=a-b;
+	return sum,diff;
+}
+main()
+{
+	int a=20,b=10;
+	printf(" %d , %d", SOD(a,b), SOD(a,b));
+}
+
+A. 30,10
+B.10,10
+C.Compiler Error
+D. None of these
+Ans: B
