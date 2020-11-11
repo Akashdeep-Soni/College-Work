@@ -1,0 +1,28 @@
+	Profile Name
+
+1.COI
+PSIT_CS_3B_1816410036_Akashdeep
+
+2.Other
+1816410036_Akashdeep_3B
+
+	Meeting Details
+
+1.KCS501 DBMS 9:30-10:20 Gaurav Bajpai
+https://zoom.us/j/7201658613?pwd=aXBsQlg2anJVZW9hKzRFVnpwbVFZQT09
+
+2.KCS051 Data Analytics 10:20-11:10 Ashutosh Pandey
+https://zoom.us/j/97091225590?pwd=czFJOWZYdFNmTE05Z3VTaHdjeTR2UT09
+
+3.KCS502 Compiler Design 11:10-12:00 Atul Gupta
+4534165518
+1234
+
+4.KCS503 DAA 12:50-1:40 Dr. S S Mahapatra
+https://zoom.us/j/4534165518?pwd=NE0xWVpzSFNSZ0dRRWgySE5Yc1Vldz09
+
+5.KNC501 COI 2:30 - 3:20 Surendar Kaur
+https://zoom.us/j/93184139493?pwd=ak8rTmFkVjdmR0VLekRXOWlENUNTUT09
+
+6.KCS055 Machine Learning Techniques 3:20 -4:10 Rajat Verma
+https://zoom.us/j/98038017300?pwd=eGU1Z1FvMG9YRWlPV09VTHhpNW5kZz09
