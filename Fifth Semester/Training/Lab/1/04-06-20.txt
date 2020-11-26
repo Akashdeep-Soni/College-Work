@@ -1,0 +1,117 @@
+1. What will be the output of the following code:
+
+def fun1(nlist):
+    for passnum in range(len(nlist)-1,0,-1):
+        for i in range(passnum):
+            if nlist[i]>nlist[i+1]:
+                temp = nlist[i]
+                nlist[i] = nlist[i+1]
+                nlist[i+1] = temp
+nlist = [5,7,9,1,4,3]
+fun1(nlist)
+print(nlist)
+
+A. [9,7,5,4,3,1]
+B. [1,3,4,5,7,9]
+C. [5,7,9,1,4,3]
+D. [3,4,1,9,7,5]
+
+Ans. B
+
+2. What will be the output of the following code:
+
+def fun4(array1, max_val):
+    m = max_val + 1
+    count = [0] * m                    
+    for a in array1:
+        count[a] += 1             
+    i = 0
+    for a in range(m):            
+        for c in range(count[a]):  
+            array1[i] = a
+            i += 1
+    return array1
+print(fun4( [1, 2, 7, 3, 2, 1, 4, 2, 3, 2, 1], 7 ))
+
+A. [1, 1, 1, 2, 2, 2, 2, 3, 3, 4, 7] 
+B. [7, 4, 3, 3, 2, 2, 2, 2, 1, 1, 1]
+C. [1, 1, 1, 2, 2, 2, 2, 3, 3, 4] 
+D. [4, 3, 3, 2, 2, 2, 2, 1, 1, 1]
+
+Ans. A
+
+3. What will be the output of the following code:
+
+def fun3(num_list):
+    return sum(range(num_list[0],num_list[-1]+1)) - sum(num_list)
+print(fun3([10,11,12,14,15,16,17]))
+
+A. 7
+B. 9
+C. 13
+D. 18
+
+Ans. C
+
+4. What will be the output of the following code:
+
+def fun2(num):
+    if len(num)<3: return []
+    num.sort()
+    result=[]
+    for i in range(len(num)-2):
+        left=i+1
+        right=len(num)-1
+        if i!=0 and num[i]==num[i-1]:continue
+        while left<right:
+            if num[left]+num[right]==-num[i]:
+                result.append([num[i],num[left],num[right]])
+                left=left+1
+                right=right-1
+                while num[left]==num[left-1] and left<right:left=left+1
+                while num[right]==num[right+1] and left<right: right=right-1
+            elif num[left]+num[right]<-num[i]:
+                left=left+1
+            else:
+                right=right-1
+    return result
+nums = [-25,-10,-7,-3,2,4,8,10]
+print(fun2(nums))
+
+A. [[-10, 8, 2], [-7, -3, 10]] 
+B. [[-10, 2, 8], [-3, -7, 10]] 
+C. [[-10, 8, 2], [-3, -7, 10]] 
+D. [[-10, 2, 8], [-7, -3, 10]] 
+
+Ans. D
+
+5. In order traversal of binary search tree will produce −
+
+A. unsorted list
+B. reverse of input
+C. sorted list
+D. none of the above
+
+Ans. C
+
+6. Travelling salesman problem is an example of
+
+A. Dynamic Algorithm
+B. Greedy Algorithm
+C. Recursive Approach
+D. Divide & Conquer
+
+Ans. B
+
+7. Consider the list of numbers given below which should be sorted in ascending order:
+91 68 12 83 72 3 47 65
+At the end of 4th pass, the status of the list is
+3 12 47 65 72 91 68 83
+Which sorting algorithm is being used to sort the list?
+
+A. bubble sort 
+B. selection sort 
+C. merge sort 
+D. quick sort
+
+Ans. B

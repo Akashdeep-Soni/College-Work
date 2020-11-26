@@ -1,0 +1,132 @@
+1. What will be the output of the below Python function when it is invoked by passing n as 4?
+Assumption: All the references to the necessary files are available and n is a non-zero value.
+ def fun(n):
+	q=Queue(n)
+	if(n==0):
+		return 1
+	else:
+		for i in range(1,n+1):
+			q.enqueue(i*i)
+		temp=1
+		while(not q.is_empty()):
+			temp += q.dequeue()
+		return temp
+A. 31
+B. 30
+C. 25
+D. Function fun() would always return 1
+
+Ans. A
+
+2. John has come up with 4 different algorithms with different step-counts as shown below to solve a
+problem.
+Step count for Algorithm1 : n^2 + nlogn
+Step count for Algorithm2 : n^2 + 2*n^3
+Step count for Algorithm3 : logn + 2^n + n!
+Step count for Algorithm4 : logn
+Which of the following is the correct sequence of given algorithms in the increasing order of
+their Big O notations?
+A. Algorithm4,Algorithm1,Algorithm2,Algorithm3
+B. Algorithm4,Algorithm2,Algorithm1,Algorithm3
+C. Algorithm4,Algorithm1,Algorithm3,Algorithm2
+D. Algorithm1,Algorithm4,Algorithm2,Algorithm3
+
+Ans. A
+
+3. Given the following linked list:
+1->4->6->7->9
+What would be the state of the linked list when the following Python function is invoked by passing
+the head node of the above linked list and 5?
+ 
+def fun(head,n):
+	temp=head
+	if(head == None);
+		return
+	else:
+		i=1
+		while(i<n):
+			val=temp.get_data()
+			temp=temp.get_next()
+			head.set_data(val)
+			i += 1
+		temp1 = head.get_data()
+		temp.set_data(temp1)
+
+Assumption: All the references to the necessary files are available. Method get_next() returns the
+link to the next node. Method get_data() returns data of the node.
+A. 1->4->6->7->7
+B. 7->4->6->7->7
+C. 1->4->6->7->9
+D. 7->4->6->7->9
+
+Ans. D correct is B
+
+4. Consider the below Python code:
+ 
+def process(input_stack);
+	output_stack=Stack(5)
+	count = 0
+	while(not input_stack.is_empty()):
+		temp=input_stack.pop()
+		for i in temp:
+			count += 1
+		output_stack.push(str(count)+temp)
+	return output_stack
+
+input_stack=Stack(5)
+input_stack.push("India")
+input_stack.push("Australia")
+input_stack.push("England")
+input_stack.push("SouthAfrica")
+
+process(input_stack).display()
+
+
+What will be the status of output_stack after execution of above code?
+Assumption: All the references to the necessary files are available
+Note: Consider that the elements of stack in the options are shown from top to bottom
+A. 11SouthAfrica-->18England-->27Australia-->32India
+B. 5India-->9Australia-->7England-->11SouthAfrica
+C. 11SouthAfrica-->7England-->9Australia-->5India
+D. 32India-->27Australia-->18England-->11SouthAfrica
+
+Ans. D
+
+5. The following values are to be stored in a hash table.
+Consider that the values have arrived in the order given below:
+80, 2, 13, 42, 22, 5
+Identify the hash function which will result in 0 collision.
+A. h(k)= k%8
+B. h(k)= k%7
+C. h(k)= k%5
+D. h(k)= k%6
+
+Ans. B
+
+6. The following values are to be stored in a hash table using the hash function, h(k)= k%7.
+Values that need to be stored arrived in the order given below.
+37,10,44,53,8,11,29
+Identify for which of the hash values generated will collision occur while mapping the values to
+their corresponding buckets using the given hash function.
+A. No collision will occur
+B. Collision will occur for hash values 1,2,4
+C. Collision will occur for hash values 1,4
+D. Collision will occur for hash values 1,3
+
+Ans. B
+
+7. Hannah is at the billing counter of a retail store and she has to make a change for 54/-. She has
+notes of the following currencies with her.
+1, 5, 10, 20
+Following are the options she has for making the change.
+1. 5 - 10/- notes, 4 - 1/- coins
+2. 1 - 20/- note, 3 - 10/- notes, 4- 1/- coins
+3. 2- 20/- notes, 1 - 10/ - note, 4 - 1/- coins
+4. 10 - 5/- notes, 4 - 1/coins
+Identify the option which follows Greedy approach.
+A. 1
+B. 2
+C. 3
+D. 4
+
+Ans. C
