@@ -48,7 +48,4 @@ def start():
 start_bt = Button(fm, text="Start", command = start, fg="white", bg="#d77337", font=("Times New Roman",20))
 start_bt.place(x=80,y=120,width=100,height=40)
 
-
-
-
 root.mainloop()
