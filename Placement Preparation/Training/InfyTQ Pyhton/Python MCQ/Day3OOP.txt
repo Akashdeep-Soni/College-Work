@@ -1,0 +1,358 @@
+1.What is the output of the following code?
+
+class EmployeeData:
+    def __init__(self, sal=0, age=0):
+    self.sal = sal
+    self.age = age
+
+    def getData(self):
+        print("{0}+{1}j".format(self.sal,self.age))
+
+empdata = EmployeeData()
+empdata.getData()
+
+a)Shows no data
+b)0+0j
+c)Shows error
+d)None of the above
+Ans b
+
+2.What is the output of the following code?
+class Test:
+     def __init__(self, a="Hello World"):
+           self.a=a
+ 
+     def display(self):
+         print(self.a)
+
+obj=test()
+obj.display()
+
+a)The program has an error because constructor can’t have default arguments
+b)Nothing is displayed
+c)“Hello World” is displayed
+d)The program has an error
+Ans d
+3.What is the output of the following code?
+
+class Change:
+    def __init__(self, x, y, z):
+       self.a = x + y + z
+ 
+x = Change(1,2,3)
+y = getattr(x, 'a')
+
+setattr(x, 'a', y+1)
+
+print(x.a)
+
+a) 6
+b) 7
+c) Error
+d) 0
+Ans b
+
+4.Is the following piece of code correct?
+class A:
+    def __init__(self, b):
+	self.b=b
+
+    def display(self):
+	print(self.b) 
+
+obj=A("Hello")
+del obj
+a)	True
+b)	False
+Ans a
+
+5.What is the output of the following code?
+class Test:
+    def __init__(self):
+       self.variable = 'Old'
+       self.Change(self.variable)
+
+    def Change(self, var):
+        var = 'New'
+
+obj=Test()
+print (obj.variable)
+
+a)“Old”
+b)“New”
+c)Shows error
+d)None of the above
+Ans a
+
+6.What is the output of the following code?
+class Fruits:
+    def __init__(self, price):
+        self.price = price
+
+obj=Fruits(50)
+ 
+obj.quantity=10
+obj.bags=2
+ 
+print(obj.quantity+len(obj.__dict__))
+
+a)12
+b)52
+c)13
+d)60
+Ans c
+7.What is the output of the following code?
+
+class Demo:
+    def __init__(self):
+        pass
+ 
+    def test(self):
+        print(__name__)
+ 
+obj = Demo()
+obj.test()
+
+a)__main__
+b)__name__
+c)main
+d)Shows error
+Ans a
+8.What is the output of following piece of code?
+class Stud:
+   def __init__(self, roll_no, grade):
+       self.roll_no = roll_no
+       self.grade = grade
+
+   def display (self):
+       print("Roll no : ", self.roll_no,  ", Grade: ", self.grade)
+
+stud1 = Stud(34, ‘S’)
+stud1.age=7
+print (hasattr(stud1, 'age'))
+
+a)True
+b)False
+c)No output
+d)Shows error
+Ans a
+9.What is the output of the following piece of code?
+
+class objects:
+    def __init__(self):
+        self.colour = None
+        self._shape = "Circle" 
+ 
+    def display(self, s):
+        self._shape = s
+
+obj=objects()
+print(obj._objects_shape)
+
+a)The program runs fine because name mangling has been properly implemented
+b)Error because the member shape is a protected member
+c)Error because the proper syntax for name mangling hasn’t been implemented
+d)Error because the member shape is a private member
+Ans b
+
+10.What will be the output of the following code?
+
+class Sales:
+    def __init__(self, id):
+        self.id = id
+        id = 100
+
+val = Sales(123)
+print (val.id)
+
+a)Syntax error
+b)100
+c)123
+d)None of the above
+Ans c
+11.Which of the following statements are true for the given code snppet?
+class A:
+    def __init__(self, i = 0):
+        self.i = i
+
+class B(A):
+    def __init__(self, j = 0):
+        self.j = j
+def main():
+    b = B()
+    print(b.i)
+    print(b.j)
+
+main()
+a)Class B inherits A, but the data field “i” in A is not inherited.
+b)Class B inherits A, thus automatically inherits all data fields in A.
+c)When you create an object of B, you have to pass an argument such as B(5)
+d)The data field “j” cannot be accessed by object b
+Ans a
+12.What will be the output of the following code?
+
+class A:
+    def __init__(self):
+        self.calcI(30)
+        print("i from A is", self.i)
+
+    def calcI(self, i):
+        self.i = 2 * i;
+
+class B(A):
+    def __init__(self):
+        super().__init__()
+        
+    def calcI(self, i):
+        self.i = 3 * i;
+
+b = B()
+
+a)The __init__ method of only class B gets invoked
+b)The __init__ method of class A gets invoked and it displays “i from A is 0”
+c)The __init__ method of class A gets invoked and it displays “i from A is 60”
+d)The __init__ method of class A gets invoked and it displays “i from A is 90”
+Ans d
+
+13.What is the output of the following piece of code?
+
+class Demo:
+    count = 0
+
+    def __init__(self):
+        self.count += 1
+
+    def get_count(self):
+        return self.count
+
+demo = Demo()
+demo1 = Demo()
+
+print (demo.get_count())
+
+a)1
+b)2
+c)0
+d)None of the above
+Ans a
+14.What is the output of the following code?
+
+class Demo:
+    count = 0
+
+    def __init__(self):
+        Demo.count += 1
+
+    def get_count(self):
+        return Demo.count
+
+demo1 = Demo()
+demo2 = Demo()
+demo3 = Demo()
+print (demo1.get_count())
+a)1
+b)2
+c)3
+d)None of the above
+Ans c
+
+15.What is the output of the following code?
+class P: 
+   def __init__(self): 
+      self.__x=100 
+      self.y=200 
+   def print(self): 
+      print (self.__x, self.y)  
+class C(P): 
+   def __init__(self): 
+      super().__init__() 
+      self.__x=300 
+      self.y=400  
+d = C() 
+d.print()
+
+a)300 400
+b)100 400
+c)100 200
+d)300 200
+Ans b
+16.What is the output of the following code?
+
+class Demo:
+    def __init__(self):
+        self.a = 1
+        self.__b = 1
+ 
+    def display(self):
+        return self.__b
+obj = Demo()
+print(obj.a)
+
+a)The program has an error because there isn’t any function to return self.a
+b)The program has an error because b is private and display(self) is returning a private member
+c)The program runs fine and 1 is printed
+d)The program has an error as you can’t name a class member using __b
+Ans c
+17.What is the output of the following code?
+class Demo:
+    def __init__(self):
+        self.a = 1
+        self.__b = 1
+ 
+    def display(self):
+        return self.__b
+ 
+obj = Demo()
+print(obj.__b)
+
+a)The program has an error because there isn’t any function to return self.a
+b)The program has an error because b is private and display(self) is returning a private member
+c)The program has an error because b is private and hence can’t be printed
+d)The program runs fine and 1 is printed
+Ans c
+18.Which of these is a private data field?
+class Demo:
+    def __init__(self):
+        __a = 1
+        self.__b = 1
+        self.__c__ = 1
+        __d__= 1
+a)__a
+b)_b
+c)__c__
+d)__d__
+Ans a
+19.	What is the output of the following code?
+class Demo:
+     def __init__(self):
+         self.a = 1
+         self.__b = 1
+ 
+     def get(self):
+         return self.__b
+ 
+obj = Demo()
+print(obj.get())
+
+a)The program has an error because there isn’t any function to return self.a
+b)The program has an error because b is private and display(self) is returning a private member
+c)The program has an error because b is private and hence can’t be printed
+d)The program runs fine and 1 is printed
+Ans d
+
+20.	What is the output for the following piece of code?
+
+class Demo:
+     def __init__(self):
+         self.a = 1
+         self.__b = 1
+     def get(self):
+         return self.__b
+obj = Demo()
+obj.a=45
+print(obj.a)
+a)The program runs properly and prints 45
+b)The program has an error because the value of members of a class can’t be changed from outside the class
+c)The program runs properly and prints 1
+d)The program has an error because the value of members outside a class can only be changed as self.a=45
+Ans a

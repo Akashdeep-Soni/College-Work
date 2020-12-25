@@ -1,0 +1,317 @@
+1.What is the output of the following code?
+
+class Fruits:
+    def __init__(self):
+        self.price = 100
+        self.__bags = 5
+    def display(self):
+        print(self.__bags)
+obj=Fruits()
+obj.display()
+
+a)The program has an error because display() is trying to print a private class member
+b)The program runs fine but nothing is printed
+c)The program runs fine and 5 is printed
+d)The program has an error because display() can’t be accessed
+Ans c
+2.What is the output of the following code?
+
+class Student:
+    def __init__(self):
+        self.marks = 97
+        self.__cgpa = 8.7
+
+    def display(self):
+        print(self.marks)
+
+obj=Student()
+print (obj._student__cgpa)
+
+a)The program runs fine and 8.7 is printed
+b)Error because private class members can’t be accessed
+c)Error because the proper syntax for name mangling hasn’t been implemented
+d)The program runs fine but nothing is printed
+Ans c
+
+3.What type of inheritance is illustrated in the following piece of code?
+
+class A():
+    pass
+class B():
+    pass
+class C(A,B):
+    pass
+
+a)Multi-level inheritance
+b)Multiple inheritance
+c)Hierarchical inheritance
+d)Single-level inheritance
+Ans b
+
+4.What is the output of the following piece of code?
+class A:
+     def __init__(self):
+         self.__i = 1
+         self.j = 5
+ 
+     def display(self):
+         print(self.__i, self.j)
+
+class B(A):
+     def __init__(self):
+         super().__init__()
+         self.__i = 2
+         self.j = 7  
+
+c = B()
+c.display()
+
+a)2 7
+b)1 5
+c)1 7
+d)2 5
+Ans c
+
+5.What is the output of the following code?
+
+class A:
+    def print_hello(self):
+        print ("In class A")
+
+class B(A):
+    pass
+
+class C(A, B):
+    pass
+
+c = C()
+
+c.print_hello()
+
+a)Prints “In class A”
+b)Does not print anything
+c)Shows error
+d)None of the above
+Ans c
+
+6.What is the output of the following code?
+
+class A:
+    def print_hello(self):
+        print ("In class A")
+
+class B(A):
+    pass
+
+class C(B, A):
+    def print_hello(self):
+        super(C, self).print_hello()
+        print ("In class C")
+
+c = C()
+a = A()
+
+a.print_hello()
+c.print_hello()
+
+a)In class A
+In class A
+In class C
+b)In class C
+In class A
+c)In class C
+d)None of the above
+Ans a
+
+7.What is the output of the following code?
+class A:
+    def __init__(self,x):
+        self.x = x
+    def count(self,x):
+        self.x = self.x+1
+class B(A):
+    def __init__(self, y=0):
+        A.__init__(self, 3)
+        self.y = y
+    def count(self):
+        self.y += 1     
+def main():
+    obj = B()
+    obj.count()
+    print(obj.x, obj.y)
+main()
+a)3 0
+b)0 1
+c)3 1
+d)None of the above
+Ans c
+8.What is the output of the following piece of code when executed in the Python shell?
+>>> class A:
+	pass
+>>> class B(A):
+	pass
+>>> obj=B()
+>>> isinstance(obj,A)
+
+a) True
+b) False
+c) Wrong syntax for isinstance() method
+d) Invalid method for classes
+Ans a
+9.Method issubclass() checks if a class is a subclass of another class. True or False?
+a) True
+b) False
+Ans a
+10.What is the output of the following piece of code?
+
+class A:
+    def one(self):
+        return self.two()    	
+    def two(self):
+        return 'A'   
+class B(A):
+    def two(self):
+        return 'B'
+obj2=B()
+print(obj2.two())
+a)A
+b)Exception is thrown
+c)A B
+d)B
+Ans d
+11.Which of the following statements is true?
+a)A non-private method in a superclass can be overridden
+b)A subclass method can be overridden by the superclass
+c)A private method in a superclass can be overridden
+d)Overriding isn’t possible in Python
+Ans a
+
+12.Which of the following best describes inheritance?
+a)Ability of a class to derive members of another class as a part of its own definition
+b)Means of bundling instance variables and methods in order to restrict access to certain class members
+c)Focuses on variables and passing of variables to functions
+d)Allows for implementation of elegant software that is well designed and easily modified
+Ans a
+
+13.Which of the following statements is wrong about inheritance?
+a)Protected members of a class can be inherited
+b)The inheriting class is called a subclass
+c)Private members of a class can be inherited and accessed
+d)Inheritance is one of the features of OOP
+Ans c
+14.What is the output of the following code?
+
+class Demo:
+    def __new__(self):
+self.__init__(self)
+print("Demo's __new__() invoked")
+
+    def __init__(self):
+print("Demo's __init__() invoked")
+
+class Derived_Demo(Demo):
+    def __new__(self):
+print("Derived_Demo's __new__() invoked")
+
+    def __init__(self):
+print("Derived_Demo's __init__() invoked")
+
+def main():
+    obj1 = Derived_Demo()
+    obj2 = Demo()
+
+main()
+
+a)Derived_Demo’s __init__() invoked
+Derived_Demo’s __new__() invoked
+Demo’s __init__() invoked
+Demo’s __new__() invoked
+b)Derived_Demo’s __new__() invoked
+Demo’s __init__() invoked
+Demo’s __new__() invoked
+c)Derived_Demo’s __new__() invoked
+Demo’s __new__() invoked
+d)Derived_Demo’s __init__() invoked
+Demo’s __init__() invoked
+Ans b
+15.Suppose B is a subclass of A, to invoke the __init__ method in A from B, what is the line of code you should write?
+
+a)A.__init__(self)
+b)B.__init__(self)
+c)A.__init__(B)
+d)B.__init__(A)
+Ans a
+16.What is the output of the following code?
+
+class Test:
+    def __init__(self):
+    self.x = 0
+
+class Derived_Test(Test):
+     def __init__(self):
+     self.y = 1
+
+def main():
+    b = Derived_Test()
+    print(b.x,b.y)
+
+main()
+a)0 1
+b)0 0
+c)Error because class B inherits A but variable x isn’t inherited
+d)Error because when object is created, argument must be passed like Derived_Test(1)
+Ans c
+17.What is the output of the following code?
+
+class A():
+    def disp(self):
+print("A disp()")
+
+class B(A):
+    pass
+
+obj = B()
+obj.disp()
+
+a)Invalid syntax for inheritance
+b)Error because when object is created, argument must be passed
+c)Nothing is printed
+d)A disp()
+Ans d
+
+18.What is the output of the following piece of code?
+
+class A:
+    def __init__(self, x= 1):
+        self.x = x
+
+class der(A):
+    def __init__(self,y = 2):
+        super().__init__()
+        self.y = y
+
+def main():
+    obj = der()
+    print(obj.x, obj.y)
+
+main()
+
+a)Error, the syntax of the invoking method is wrong
+b)The program runs fine but nothing is printed
+c)1 0
+d)1 2
+Ans d
+19.Which of the following is not a type of inheritance?
+
+a)Single-level
+b)Double-level
+c)Multiple
+d)Multi-level
+ Ans b
+20.Which of the following statements is not true?
+
+a)A non-private method in a superclass can be overridden
+b)A derived class is a subset of superclass
+c)The value of a private variable in the superclass can be changed in the subclass
+d)When invoking the constructor from a subclass, the constructor of superclass is automatically invoked
+Ans c

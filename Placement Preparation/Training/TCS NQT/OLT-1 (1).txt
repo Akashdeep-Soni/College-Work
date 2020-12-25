@@ -1,0 +1,150 @@
+TCS_OLT_1_20201003
+=========================================================================
+1.	Which of the following syntax is correct for command -line arguments?
+a) int main (char *argv[], int argc)
+b) none of the three options
+c) int main () { int argv, char *argc[]; }
+d) int main(int var, char *varg[])
+Answer: D
+
+2.	The full set of operations allowed on a stack are
+a) Push, pop
+b) Push, pop, remove
+c) Push, pop, add, remove
+d) Push,pop,add,remove,substitute
+Answer: A
+
+3.	realloc () function is used to:
+a) Get back the memory that was released earlier using free() function
+b) Reallocate a file pointer when switching between files
+c) Change the size of an array
+d) Change the size of the dynamically allocated memory
+Answer: D
+
+4.	Eesha wants to implement an image viewer application to view images in a given folder. 
+The application will be able to display an image and will also know what its next and previous images are at any given 
+point of time so that the user can so that the user can view next/previous image by pressing right/left keys on the keyboard. 
+Which data structure is appropriate for Esha to use?
+a) Tree
+b) Queue
+c) Linked list
+d) Stack
+Answer: C
+
+5.	Eesha is developing a word processing software in which she wants to provide undo feature. 
+The software will maintain all the sequential changes and at any point of time pressing control z will undo the latest change, 
+what data structure should Eesha use for this?
+a) Stack
+b) Queue
+c) Linked list
+d) Array
+Answer: A
+
+6.	#include<stdio.h>
+main(int argc, char**argv)
+{
+printf(“%s\n”,argv[–argc]);
+return 1;
+}
+The above program was run with the following command line parameters: Asha usha nisha easha
+What will be the output?
+a) Nisha
+b) Unable to run due to compilation error
+c) No output,run time error
+d) easha
+Answer: C
+
+7.	The given code is run with three command line parameters mentioned here: Paper Ink Pen
+What will be the output of the above program?
+#include
+int main(int argc, char ** argv)
+{
+char **items;
+int j = 3, i;
+items = argv;
+for(i = 1; (i%4); i++)
+{
+int **p = &items[j];
+printf("%c", **p);
+j--;
+}
+return 0;
+}
+a) PIP
+b) Pen
+c) Pap
+d) Ink
+Answer: a
+
+8.	Which of the following is true?
+a) Array is a dynamic data structure whose size can be changed while stacks are static data structures whose sizes are fixed.
+b) Array elements can be accessed and modified(elements can be added or removed) only at the ends of the array while any elements of the stack can be accessed or modified randomly through their indices. 
+c) An array can have elements of different data types. 
+d) Elements of a linked-list can be accessed only sequentially.
+Answer: d
+
+9.	Eesha wrote a function fact( ) in “C” language to calculate factorial of a given number and saved the file as fact.c. 
+She forgot to code the main function to call this fact function. Will she be able to compile this fact.c without the main() function?
+a) Yes, she can compile provided the compiler option -no strict-checking is enabled.
+b) No, she can not compile as the main function is required to compile any C program file.
+c) Yes, she can compile as main( ) is not required at compile time.
+d) Yes, she can compile and run as the system will supply default values to fact function.
+Answer: c
+
+10.	The difference between variable declaration and variable definition is:
+a) Declaration and definition are the same. There is no difference.
+b) A declaration is used for variables and definitions is used for functions.
+c) Declaration associates type to the variable whereas definition associates scope to the variable. 
+d) Declaration associates type to the variable whereas definition gives the value to the variable.
+ Answer: d
+
+11.	The inorder and preorder traversal of a binary tree are d b e a f c g and a b d e c f g, respectively. 
+The post-order traversal of the binary tree is:
+a) d e b f g c a
+b) d e f g b c a
+c) e d b f g c a
+d) e d b g f c a 
+Answer: a
+
+12. Which of the fplowing statements should be used to obtain a remainder after dividing 3.14 by 2.1?
+
+A. rem = 3.14 % 2.1;
+B. rem = modf(3.14, 2.1);
+C. rem = fmod(3.14, 2.1); 
+D. Remainder cannot be obtain in floating point division.
+
+Ans: C
+
+13. 21.	How many times the below loop will be executed?
+#include<stdio.h>
+int main()
+{
+int x, y;
+for(x=5;x>=1;x--)
+{
+  for(y=1;y<=x;y++)
+     printf("%d\n",y);
+} 
+}
+A. 15
+B. 11
+C. 10
+D. 13
+Answer: A
+
+14. Where are the local variables stored?
+A. Disk
+B. Stack
+C. Heap
+D. Code
+Answer: B
+
+15. Is there any difference between following declarations?
+1 : extern int fun();
+2 : int fun();
+A. Both are identical
+B. No difference, except extern int fun(); is probably in another file
+C. int fun(); is overrided with extern int fun();
+D. None of these
+Answer: Option B
+
