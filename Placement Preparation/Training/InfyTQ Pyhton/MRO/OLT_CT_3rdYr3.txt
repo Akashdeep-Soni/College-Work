@@ -1,0 +1,571 @@
+1. What will be the output of the following code:
+
+def fun1(nlist):
+    for passnum in range(len(nlist)-1,0,-1):
+        for i in range(passnum):
+            if nlist[i]>nlist[i+1]:
+                temp = nlist[i]
+                nlist[i] = nlist[i+1]
+                nlist[i+1] = temp
+nlist = [5,7,9,1,4,3]
+fun1(nlist)
+print(nlist)
+
+A. [9,7,5,4,3,1]
+B. [1,3,4,5,7,9]
+C. [5,7,9,1,4,3]
+D. [3,4,1,9,7,5]
+
+Ans. B
+
+2. What will be the output of the following code:
+
+def fun4(array1, max_val):
+    m = max_val + 1
+    count = [0] * m                    
+    for a in array1:
+        count[a] += 1             
+    i = 0
+    for a in range(m):            
+        for c in range(count[a]):  
+            array1[i] = a
+            i += 1
+    return array1
+print(fun4( [1, 2, 7, 3, 2, 1, 4, 2, 3, 2, 1], 7 ))
+
+A. [1, 1, 1, 2, 2, 2, 2, 3, 3, 4, 7] 
+B. [7, 4, 3, 3, 2, 2, 2, 2, 1, 1, 1]
+C. [1, 1, 1, 2, 2, 2, 2, 3, 3, 4] 
+D. [4, 3, 3, 2, 2, 2, 2, 1, 1, 1]
+
+Ans. A
+
+3. What will be the output of the following code:
+
+def fun3(num_list):
+    return sum(range(num_list[0],num_list[-1]+1)) - sum(num_list)
+print(fun3([10,11,12,14,15,16,17]))
+
+A. 7
+B. 9
+C. 13
+D. 18
+
+Ans. C
+
+4. What will be the output of the following code:
+
+def fun2(num):
+    if len(num)<3: return []
+    num.sort()
+    result=[]
+    for i in range(len(num)-2):
+        left=i+1
+        right=len(num)-1
+        if i!=0 and num[i]==num[i-1]:continue
+        while left<right:
+            if num[left]+num[right]==-num[i]:
+                result.append([num[i],num[left],num[right]])
+                left=left+1
+                right=right-1
+                while num[left]==num[left-1] and left<right:left=left+1
+                while num[right]==num[right+1] and left<right: right=right-1
+            elif num[left]+num[right]<-num[i]:
+                left=left+1
+            else:
+                right=right-1
+    return result
+nums = [-25,-10,-7,-3,2,4,8,10]
+print(fun2(nums))
+
+A. [[-10, 8, 2], [-7, -3, 10]] 
+B. [[-10, 2, 8], [-3, -7, 10]] 
+C. [[-10, 8, 2], [-3, -7, 10]] 
+D. [[-10, 2, 8], [-7, -3, 10]] 
+
+Ans. D
+
+5. In order traversal of binary search tree will produce −
+
+A. unsorted list
+B. reverse of input
+C. sorted list
+D. none of the above
+
+Ans. C
+
+6. Travelling salesman problem is an example of
+
+A. Dynamic Algorithm
+B. Greedy Algorithm
+C. Recursive Approach
+D. Divide & Conquer
+
+Ans. B
+7. What will be the output of the following Python code?
+
+class objects:
+    def __init__(self):
+        self.colour = None
+        self._shape = "Circle" 
+ 
+    def display(self, s):
+        self._shape = s
+obj=objects()
+print(obj._objects_shape)
+a) The program runs fine because name mangling has been properly implemented
+b) Error because the member shape is a protected member
+c) Error because the proper syntax for name mangling hasn’t been implemented
+d) Error because the member shape is a private member
+Answer: b
+Explanation: Protected members begin with one underscore and they can only be accessed within a class or by subclasses.
+8. What will be the output of the following Python code?
+
+class A:
+    def __repr__(self):
+        return "1"
+class B(A):
+    def __repr__(self):
+        return "2"
+class C(B):
+    def __repr__(self):
+        return "3"
+o1 = A()
+o2 = B()
+o3 = C()
+print(o1, o2, o3)
+a) 1 1 1
+b) 1 2 3
+c) ‘1’ ‘1’ ‘1’
+d) An exception is thrown
+View Answer
+
+Answer: b
+Explanation: When different objects are invoked, each of the individual classes return their individual values and hence it is printed.
+9. What will be the output of the following Python code?
+
+class A:
+    def __init__(self):
+        self.multiply(15)
+        print(self.i)
+ 
+    def multiply(self, i):
+        self.i = 4 * i;
+class B(A):
+    def __init__(self):
+        super().__init__()
+ 
+    def multiply(self, i):
+        self.i = 2 * i;
+obj = B()
+a) 15
+b) 60
+c) An exception is thrown
+d) 30
+View Answer
+
+Answer: d
+Explanation: The derived class B overrides base class A.
+10. What will be the output of the following Python code?
+
+class Demo:
+    def check(self):
+        return " Demo's check "  
+    def display(self):
+        print(self.check())
+class Demo_Derived(Demo):
+    def check(self):
+        return " Derived's check "
+Demo().display()
+Demo_Derived().display()
+a) Demo’s check Derived’s check
+b) Demo’s check Demo’s check
+c) Derived’s check Demo’s check
+d) Syntax error
+View Answer
+
+Answer: a
+Explanation: Demo().display() invokes the display() method in class Demo and Demo_Derived().display() invokes the display() method in class Demo_Derived.
+11. What will be the output of the following Python code?
+
+class A:
+    def __init__(self):
+        self.multiply(15)
+    def multiply(self, i):
+        self.i = 4 * i;
+class B(A):
+    def __init__(self):
+        super().__init__()
+        print(self.i)
+ 
+    def multiply(self, i):
+        self.i = 2 * i;
+obj = B()
+a) 15
+b) 30
+c) An exception is thrown
+d) 60
+View Answer
+
+Answer: b
+Explanation: The derived class B overrides base class A.
+12. What will be the output of the following Python code?
+
+class Demo:
+    def __check(self):
+        return " Demo's check "
+    def display(self):
+        print(self.check())
+class Demo_Derived(Demo):
+    def __check(self):
+        return " Derived's check "
+Demo().display()
+Demo_Derived().display()
+a) Demo’s check Derived’s check
+b) Demo’s check Demo’s check
+c) Derived’s check Demo’s check
+d) Syntax error
+View Answer
+
+Answer: b
+Explanation: The method check is private so it can’t be accessed by the derived class. Execute the code in the Python shell.
+13. What will be the output of the following Python code?
+
+class A:
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+    def __str__(self):
+        return 1
+    def __eq__(self, other):
+        return self.x * self.y == other.x * other.y
+obj1 = A(5, 2)
+obj2 = A(2, 5)
+print(obj1 == obj2)
+a) False
+b) 1
+c) True
+d) An exception is thrown
+View Answer
+
+Answer: c
+Explanation: Since 5*2==2*5, True is printed. Execute it in the Python shell to verify.
+14. What will be the output of the following Python code?
+
+class A:
+    def one(self):
+        return self.two()    	
+    def two(self):
+        return 'A'   
+class B(A):
+    def two(self):
+        return 'B'
+obj2=B()
+print(obj2.two())
+a) A
+b) An exception is thrown
+c) A B
+d) B
+View Answer
+
+Answer: d
+Explanation: The derived class method two() overrides the method two() in the base class A.
+15. Which of the following statements is true?
+a) A non-private method in a superclass can be overridden
+b) A subclass method can be overridden by the superclass
+c) A private method in a superclass can be overridden
+d) Overriding isn’t possible in Python
+View Answer
+
+Answer: a
+Explanation: A public method in the base class can be overridden by the same named method in the subclass.
+16. Which of the following best describes polymorphism?
+a) Ability of a class to derive members of another class as a part of its own definition
+b) Means of bundling instance variables and methods in order to restrict access to certain class members
+c) Focuses on variables and passing of variables to functions
+d) Allows for objects of different types and behaviour to be treated as the same general type
+View Answer
+
+Answer: d
+Explanation: Polymorphism is a feature of object-oriented programming languages. It allows for the implementation of elegant software that is well designed and easily modified.
+17. What is the biggest reason for the use of polymorphism?
+a) It allows the programmer to think at a more abstract level
+b) There is less program code to write
+c) The program will have a more elegant design and will be easier to maintain and update
+d) Program code takes up less space
+View Answer
+
+Answer: c
+Explanation: Polymorphism allows for the implementation of elegant software.
+18. What is the use of duck typing?
+a) More restriction on the type values that can be passed to a given method
+b) No restriction on the type values that can be passed to a given method
+c) Less restriction on the type values that can be passed to a given method
+d) Makes the program code smaller
+View Answer
+
+Answer: c
+Explanation: In Python, any set of classes with a common set of methods can be treated similarly. This is called duck typing. Hence duck typing imposes less restrictions.
+19. What will be the output of the following Python code?
+
+class A:
+    def __str__(self):
+        return '1'
+class B(A):
+    def __init__(self):
+        super().__init__()
+class C(B):
+    def __init__(self):
+        super().__init__()
+def main():
+    obj1 = B()
+    obj2 = A()
+    obj3 = C()
+    print(obj1, obj2,obj3)
+main()
+a) 1 1 1
+b) 1 2 3
+c) ‘1’ ‘1’ ‘1’
+d) An exception is thrown
+View Answer
+
+Answer: a
+Explanation: The super().__init__() in the subclasses has been properly invoked and none of other subclasses return any other value. Hence 1 is returned each time the object is created and printed.
+20. What will be the output of the following Python code?
+
+class Demo:
+    def __init__(self):
+        self.x = 1
+    def change(self):
+        self.x = 10
+class Demo_derived(Demo):
+    def change(self):
+        self.x=self.x+1
+        return self.x
+def main():
+    obj = Demo_derived()
+    print(obj.change())
+ 
+main()
+a) 11
+b) 2
+c) 1
+d) An exception is thrown
+View Answer
+
+Answer: b
+Explanation: The derived class method change() overrides the base class method.
+21
+When the values of a=7, b=6 and c=3, which among the following 
+logical expressions would be FALSE?
+
+a)	(a+b)>(c) and (a*b+c)>=(c+a)
+
+b)	(a*b)>(c*a) and (a*b)<=(a*b*c)
+
+c)	(a*c)>(a*b*c) or (a*c)<=(b*c)
+
+d)	not((a*c)>(c*a) and (a*c)<=(b*c))
+		
+			Answer: c
+------------------------------------------------
+22
+What would be the output of the below Python code?
+list1 = [10,20,0,40,0]
+def test():
+    try:
+        i=3
+        if(list1[i]/list1[i+1]>1):
+            value=i+1
+    except ZeroDivisionError:
+        print("1")
+    except IndexError:
+        print("2")
+    finally:
+        print("4")
+    print("5")
+test()
+
+
+a)	1
+	5
+b)	1
+	4
+	5
+c)	2
+	4
+	5
+d)	1
+	4
+			Answer:b
+-------------------------------------
+23
+Consider the marks list given below.
+
+Identify the Python code to be written in the Line 1 such that
+ the output is [“FA2”,95]
+marks=["FA1",80,"FA2",85,"FA3",95]
+report=marks[-4:]
+#Line1____________
+print(report)
+
+
+a)	report=report[:1]+marks[5:]
+b)	report=marks[2:3]+marks[-2:]
+c)	report=marks[-4:-2]
+d)	report=report[:2]
+
+			Answer: a
+------------------------------
+24
+What would be the output of following Python code?
+
+name1 = "Roger"
+name2 = "Robert"
+def swap_name(name1,name2):
+    temp = name1
+    name1 = name2
+    name2 = temp
+print("Before swapping: name1="+name1+" name2="+name2)
+swap_name(name1, name2)
+print("After swapping: name1="+name1+" name2="+name2)
+
+ 
+
+A) Before swapping: name1=Roger name2=Robert
+   After swapping: name1=None name2=None
+
+B) Before swapping: name1=Roger name2=Robert
+   After swapping: name1=Robert name2=Robert
+
+C) Before swapping: name1=Roger name2=Robert
+   After swapping: name1=Roger name2=Robert
+
+D) Before swapping: name1=Roger name2=Robert
+   After swapping: name1=Robert name2=Roger
+
+			Answer:c
+-------------------------------------------------
+25 What is the output of the following?
+
+x = "abcdef"
+i = "a"
+while i in x:
+    x = x[:-1]
+    print(i, end = " ")
+A. i i i i i i
+B. a a a a a a
+C. a a a a a
+D. none of the mentioned
+Answer: Option B
+
+
+----------------------------------------------
+26
+What is the output of the below Python code?
+Note:Assume that necessary imports have been done
+temp = ['Mysore','Bangalore','Pune','Chennai']
+temp.sort()
+count1 = len(temp[0])
+count2 = len(temp[-1])
+final_var = math.ceil(count1/count2)
+print(final_var)
+
+a)	3
+b)	2
+c)	1
+d)	4
+		Answer:a
+------------------------------
+27 What will be the output of the following Python code?
+f = None
+for i in range (5):
+    with open("data.txt", "w") as f:
+        if i > 2:
+            break
+print(f.closed)
+a) True
+b) False
+c) None
+d) Error
+Answer: a
+Explanation: The WITH statement when used with open file guarantees that the file object is closed when the with block exits.
+
+---------------------------------------
+28
+What would be the output of the below Python code?
+
+f = lambda x: (x*2)%3!=0
+def pick(f, list1):
+    for item in list1:
+        if(not f(item)):
+            list1.remove(item)
+list=[1,2,3,4,5,6,7,8,9]
+pick(f,list)
+print(list)
+
+a)	[3, 6, 9]
+b)	[1, 2, 4, 5, 7, 8]
+c)	[2, 4, 6, 8]
+d)	[1, 3, 5, 7, 9]
+
+			Answer:b
+------------------------------------------------
+29
+What would be the output of the below Python code?
+
+var = 200
+if(var > 200):
+    print("Within first block")
+    if(var == 150):
+        print("which is 150")
+    elif(var == 100):
+        print("Which is 100")
+elif(var > 50):
+    print("Within second block")
+    if(var%5 == 0):
+        print("Which is multiple of 5")
+    elif(var%10==0):
+        print("Which is multiple of 10")
+    else:
+        print("Neither multiple of 5 nor multiple of 10")
+else:
+    print("Could not find true expression")
+print("Good bye!")
+
+a) Within second block      
+   Which is multiple of 5 
+   Good bye!
+
+b) Could not find true expression
+   Good bye!
+
+c) Within second block 
+   Neither multiple of 5 nor multiple of 10
+   Good bye!
+
+d) Within first block
+   Which is 100
+   Good bye!
+
+			Answer:a
+-----------------------------------------
+30
+What does the below Python code do?
+
+for i in range(1,6):
+    for j in range(1,6):
+        if(i%j!=0):
+            pass
+        elif(j<i):
+            continue
+        else:
+            print(i*j)
+
+a)	Prints the square of numbers from 1 to 6
+b)	Prints the square of numbers from 1 to 5
+c)	Prints prime numbers from 1 to 6
+d)	Prints prime numbers from 1 to 5
+		
+			Answer:b
+---------------------------------------------

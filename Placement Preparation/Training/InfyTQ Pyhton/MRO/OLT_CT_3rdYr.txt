@@ -1,0 +1,684 @@
+1. Given the following stack:
+(Top--->Bottom)
+7->12->1->5->4->2
+What will be the output of the below Python function when it is invoked by passing the above
+stack?
+Assumption: All the references to the necessary files are available
+
+def fun(stack1):
+	if(stack.is_empty());
+		return
+	else:
+		s1=Stack(4)
+		while(not stack.is_empty()):
+			s1.push(stack1.pop())
+			s1.push(stack1.pop())
+			s1.push(s1.pop()*s1.pop())
+		return s1
+
+Note: The options show the stack output from top to bottom.
+A. 84->8->5 
+B. 5->84->8 
+C. 8->5->84 
+D. No change
+Ans C
+2. What does the below Python function do using Queue data structure?
+Assumption: All the references to the necessary files are available and n is a non-zero value.
+
+def fun(n):
+	q=Queue(n)
+	if(n==0):
+		return 1
+	else:
+		for i in range(1,n+1):
+			q.enqueue(i)
+		temp=1
+		while(not q is_empty()):
+			temp *= q.dequeue()
+		return
+
+A. Function fun() returns the binary equivalent of a number 'n'
+B. Function fun() returns the factorial of a number 'n'
+C. Function fun() returns the sum of first 'n' numbers
+D. Function fun() would always return 1
+Ans B
+
+3. Given the following linked list:
+12->34->26->67->98
+What would be the state of the linked list when the following Python function is invoked by
+passing the head node of the above linked list and 3?
+Assumption: All the references to the necessary files are available
+ 
+def fun(head,n):
+	temp=head
+	if(head==None):
+		return
+	else:
+		i=1
+		while(i != n):
+			temp = temp.next
+			i += 1
+		temp1=head.data
+		head.data=temp.data
+		temp.data=temp1
+
+A. 12->34->26->67->98
+B. 26->34->12->67->98
+C. 67->34->26->12->98
+D. 98->34->26->67->12
+Ans. B
+4. Given the following Linked List: 12->121->112->111->222
+What would be the state of the linked list when the following Python function is invoked by passing
+the head node of the above linked list?
+Assumption: All the references to the necessary files are available
+
+def fun(head):
+	temp=head
+	if(head==None):
+		return
+	else:
+		while(temp.next != None);
+			temp.data += temp.next.data
+			temp=temp.next 
+A. 133->233->223->111->222
+B. 133->233->112->333->222
+C. 133->233->223->333->222
+D. 133->233->223->333->355
+Ans. C
+5. Which is the best data structure for round robin algorithm for CPU scheduling?
+
+A. Stack implemented using queues
+B. Doubly linked list
+C. Circular queue
+D. Queue implemented using stacks
+
+Ans. C
+6. What will be the output of the following Python code?
+
+class change:
+    def __init__(self, x, y, z):
+        self.a = x + y + z
+ 
+x = change(1,2,3)
+y = getattr(x, 'a')
+setattr(x, 'a', y+1)
+print(x.a)
+a) 6
+b) 7
+c) Error
+d) 0
+View Answer
+
+Answer: b
+Explanation: First, a=1+2+3=6. Then, after setattr() is invoked, x.a=6+1=7.
+7. What will be the output of the following Python code?
+
+ class test:
+     def __init__(self,a):
+         self.a=a
+ 
+     def display(self):
+         print(self.a)
+obj=test()
+obj.display()
+a) Runs normally, doesn’t display anything
+b) Displays 0, which is the automatic default value
+c) Error as one argument is required while creating the object
+d) Error as display function requires additional argument
+View Answer
+
+Answer: c
+Explanation: Since, the __init__ special method has another argument a other than self, during object creation, one argument is required. For example: obj=test(“Hello”)
+8. What is the output of the following code?
+def foo():
+    total += 1
+    return total
+total = 0
+print(foo())
+a) 0	b) 1	c) error		d) none of the mentioned
+Answer: c
+
+9. What is the output of the following code?
+def foo(x):
+    x = ['def', 'abc']
+    return id(x)
+q = ['abc', 'def']
+print(id(q) == foo(q))
+a) True		b) False		c) None		d) Error
+Answer: b
+10. What will be the output of the following Python code?
+
+class A:
+    def __init__(self, x= 1):
+        self.x = x
+class der(A):
+    def __init__(self,y = 2):
+        super().__init__()
+        self.y = y
+def main():
+    obj = der()
+    print(obj.x, obj.y)
+main()
+a) Error, the syntax of the invoking method is wrong
+b) The program runs fine but nothing is printed
+c) 1 0
+d) 1 2
+View Answer
+
+Answer: d
+Explanation: In the above piece of code, the invoking method has been properly implemented and hence x=1 and y=2.
+11. What does built-in function type do in context of classes?
+a) Determines the object name of any value
+b) Determines the class name of any value
+c) Determines class description of any value
+d) Determines the file name of any value
+View Answer
+
+Answer: b
+Explanation: For example: >>> type((1,)) gives <class ‘tuple’>.
+12. What will be the output of the following Python code?
+
+class Test:
+    def __init__(self):
+        self.x = 0
+class Derived_Test(Test):
+    def __init__(self):
+        self.y = 1
+def main():
+    b = Derived_Test()
+    print(b.x,b.y)
+main()
+a) 0 1
+b) 0 0
+c) Error because class B inherits A but variable x isn’t inherited
+d) Error because when object is created, argument must be passed like Derived_Test(1)
+View Answer
+
+Answer: c
+Explanation: Since the invoking method, Test.__init__(self), isn’t present in the derived class, variable x can’t be inherited.
+13. What will be the output of the following Python code?
+
+class A():
+    def disp(self):
+        print("A disp()")
+class B(A):
+    pass
+obj = B()
+obj.disp()
+a) Invalid syntax for inheritance
+b) Error because when object is created, argument must be passed
+c) Nothing is printed
+d) A disp()
+View Answer
+
+Answer: d
+Explanation: Class B inherits class A hence the function disp () becomes part of class B’s definition. Hence disp() method is properly executed and the line is printed.
+14.What is the output of the following code?
+
+class Change:
+    def __init__(self, x, y, z):
+       self.a = x + y + z
+ 
+x = Change(1,2,3)
+y = getattr(x, 'a')
+
+setattr(x, 'a', y+1)
+
+print(x.a)
+
+a) 6
+b) 7
+c) Error
+d) 0
+Ans b
+
+15.Is the following piece of code correct?
+class A:
+    def __init__(self, b):
+	self.b=b
+
+    def display(self):
+	print(self.b) 
+
+obj=A("Hello")
+del obj
+a)	True
+b)	False
+Ans a
+
+16.What is the output of the following code?
+class Test:
+    def __init__(self):
+       self.variable = 'Old'
+       self.Change(self.variable)
+
+    def Change(self, var):
+        var = 'New'
+
+obj=Test()
+print (obj.variable)
+
+a)“Old”
+b)“New”
+c)Shows error
+d)None of the above
+Ans a
+17.What is the output of the following piece of code?
+
+class objects:
+    def __init__(self):
+        self.colour = None
+        self._shape = "Circle" 
+ 
+    def display(self, s):
+        self._shape = s
+
+obj=objects()
+print(obj._objects_shape)
+
+a)The program runs fine because name mangling has been properly implemented
+b)Error because the member shape is a protected member
+c)Error because the proper syntax for name mangling hasn’t been implemented
+d)Error because the member shape is a private member
+Ans b
+
+18.What will be the output of the following code?
+
+class Sales:
+    def __init__(self, id):
+        self.id = id
+        id = 100
+
+val = Sales(123)
+print (val.id)
+
+a)Syntax error
+b)100
+c)123
+d)None of the above
+Ans c
+19.What is the output of the following code?
+class P: 
+   def __init__(self): 
+      self.__x=100 
+      self.y=200 
+   def print(self): 
+      print (self.__x, self.y)  
+class C(P): 
+   def __init__(self): 
+      super().__init__() 
+      self.__x=300 
+      self.y=400  
+d = C() 
+d.print()
+
+a)300 400
+b)100 400
+c)100 200
+d)300 200
+Ans b
+20.What is the output of the following code?
+
+class Demo:
+    def __init__(self):
+        self.a = 1
+        self.__b = 1
+ 
+    def display(self):
+        return self.__b
+obj = Demo()
+print(obj.a)
+
+a)The program has an error because there isn’t any function to return self.a
+b)The program has an error because b is private and display(self) is returning a private member
+c)The program runs fine and 1 is printed
+d)The program has an error as you can’t name a class member using __b
+Ans c
+21.What is the output when following code is executed ?
+myList = [1, 5, 5, 5, 5, 1]
+max = myList[0]
+indexOfMax = 0
+for i in range(1, len(myList)):
+    if myList[i] > max:
+        max = myList[i]
+        indexOfMax = i
+print(indexOfMax)
+a.1
+b.2
+c.3
+d.4
+Answer a
+22.
+myList = [1, 2, 3, 4, 5, 6]
+for i in range(1, 6):
+    myList[i - 1] = myList[i]
+ 
+for i in range(0, 6): 
+    print(myList[i], end = " ")
+
+a.2 3 4 5 6 1
+b.6 1 2 3 4 5
+c.2 3 4 5 6 6
+d.1 1 2 3 4 5
+Answer c
+23. What is the output when following code is executed ?
+def f(values):
+    values[0] = 44
+ 
+v = [1, 2, 3]
+f(v)
+print(v)
+a.[1, 44].
+b.[1, 2, 3, 44].
+c.[44, 2, 3].
+d.[1, 2, 3].
+Answer c
+24. What will be the output of the following Python code?
+a={i: i*i for i in range(6)}
+print (a)
+
+a)	Dictionary comprehension doesn’t exist
+b)	{0: 0, 1: 1, 2: 4, 3: 9, 4: 16, 5: 25, 6:36}
+c)	{0: 0, 1: 1, 4: 4, 9: 9, 16: 16, 25: 25}
+d)	{0: 0, 1: 1, 2: 4, 3: 9, 4: 16, 5: 25}
+Answer:  d
+
+25. Which of the statements about dictionary values if false?
+
+a) More than one key can have the same value
+b) The values of the dictionary can be accessed as dict[key]
+c) Values of a dictionary must be unique
+d) Values of a dictionary can be a mixture of letters and numbers
+
+Answer: c
+
+
+
+26. What will be the output of the following Python code snippet?
+total={}
+def insert(items):
+    if items in total:
+        total[items] += 1
+    else:
+        total[items] = 1
+
+insert('Apple')
+insert('Ball')
+insert('Apple')
+print (len(total))
+
+a) 3
+b) 1
+c) 2
+d) 0
+Answer: c
+Q27.What is the output of the following code snippet?
+
+class Customer:
+    def __init__(self, cust_id, age):
+        self.cust_id = cust_id
+        self.age = age
+
+c1=Customer(100,20)
+
+def change(c2):
+    c2=Customer(100,21)
+
+change(c1)
+print(c1.age)
+a)20
+b)21
+c)Error
+d)None of the above
+Ans a
+
+Q28.What is the output of the following code snippet?
+
+class Table:
+    def __init__(self):
+        self.no_of_legs=4
+        self.__glass_top=None
+        self.__wooden_top=None
+
+    def assign_data(self,glass_top,wooden_top):
+        self.__glass_top=glass_top
+        self.__wooden_top=wooden_top
+
+    def identify_rate(self,glass_top,wooden_top):
+        self.assign_data(glass_top, wooden_top)
+        if(self.__glass_top==True):
+            rate=20000
+        elif(self.__wooden_top==True):
+            rate=30000
+        else:
+            rate=0
+        return rate
+dining_table=Table()
+rate=dining_table.identify_rate(True, False)
+print(rate)
+a)20000
+b)30000
+c)Error
+d)None of the abobe
+Ans a
+Q29.What is the output of the below program?
+
+class InvalidAccountException(Exception):
+    pass
+class Account:
+    account_list=[1001,1002,1003,1004]
+    def validate_account(self,account_id):
+        status=0
+        for acct_id in self.account_list:
+            if(account_id==acct_id):
+                status=1
+                break
+        if(status!=0):
+            return True
+        else:
+            raise InvalidAccountException
+try:
+    account1=Account()
+    account1.validate_account(1006)
+    print("Valid account number")
+except InvalidAccountException:
+    print("Invalid account number") 
+a)Valid account number
+b)Invalid account number
+c)Error: Element not found in list
+d)None of the above
+Ans b
+
+Q30.What will be the output of the code given below?
+class NameLengthException(Exception):
+    pass
+class EmployeeIdException(Exception):
+    pass
+class Employee:
+    __trials=0
+    def __init__(self,emp_id,emp_name):
+        self.__emp_name=emp_name
+        self.__emp_id=emp_id
+    def validate_name(self):
+        try:
+            if(len(self.__emp_name) < 4):
+                Employee.__trials=Employee.__trials+1
+                raise NameLengthException
+            if( not(self.__emp_id.startswith('E'))):
+                raise EmployeeIdException
+        except NameLengthException:
+            Employee.__trials=Employee.__trials+1
+            print(Employee.__trials)
+        except EmployeeIdException:
+            Employee.__trials=Employee.__trials+1
+            print(Employee.__trials)
+emp1=Employee('E1001','Tom')
+emp1.validate_name()
+emp2=Employee('1001','Tomy')
+emp2.validate_name()
+a)2
+  3
+b)2
+  1
+c)3
+d)2
+Ans a
+
+Q31:Which of these is a private data field?
+def Demo:
+def __init__(self):
+    __a = 1
+    self.__b = 1
+    self.__c__ = 1
+    __d__= 1
+A. __a
+B. __b
+C. __c__
+D. __d__
+Answer: Option B
+
+Q32:When will the else part of try-except-else be executed?
+A. always
+B. when an exception occurs
+C. when no exception occurs
+D. when an exception occurs in to except block
+Answer: Option C
+
+Q33. What should be the value of num1 and num2 to get the output as "1"?
+
+if((num1/num2==5) and (num1+num2)>5):
+    print("1")
+elif((num1-num2)<=1 or (num1%num2)==0):
+    print("2")
+else:
+    print("3")
+
+a) num1=11, num2=2
+b) num1=0, num2=5
+c) num1=5, num2=1
+d) num1=-10,num2=2
+
+Answer==> c
+
+
+Q34. Which among the following codes have equivalent logic?
+
+CODE1:
+
+if(value3>1000 and value3<1006):
+  if(value1=="ABC"):
+    if(value2=="A"):
+      value4=10
+    else:
+      value4=8
+  elif(value1=="XYZ"):
+    if(value2=="A"):
+      value4=8
+    else:
+      value4=6
+print(value4)
+
+CODE2:
+
+if(value3>=1001 and value3<=1005 and value1=="ABC"):
+    if(value2=="A"):
+        value4=10
+    else:
+        value4=8
+elif(value3>1000 and value3<1006 and value1=="XYZ"):
+     if(value2=="A"):
+        value4=8
+     else:
+        value4=6
+print(value4)
+
+CODE3:
+
+if(value3>1000 and value3<1006 or value1=="ABC"):
+   if(value2=="A"):
+      value4=10
+   else:
+      value4=8
+elif(value3>1000 and value3<1006 or  value1=="XYZ"):
+   if(value2=="A"):
+      value4=8
+   else:
+      value4=6
+print(value4)
+
+a) Code2,Code3
+b) Code1,Code3
+c) Code1,Code2
+
+Answer==> c
+35. What will be the output of the following Python code?
+x=1
+def cg():
+	global x
+	x=x+1	
+cg()
+print(x)
+a) 2
+b) 1
+c) 0
+d) Error
+Answer: a
+Explanation: Since ‘x’ has been declared a global variable, it can be modified very easily within the function. Hence the output is 2.
+36. On assigning a value to a variable inside a function, it automatically becomes a global variable.
+a) True
+b) False
+Answer: b
+Explanation: On assigning a value to a variable inside a function, t automatically becomes a local variable. Hence the above statement is false.
+37. What will be the output of the following Python code?
+e="butter"
+def f(a): 
+      print(a)+e
+f("bitter")
+a) error
+b)butter
+  error
+c)bitter
+  error
+d) bitterbutter
+Answer: c
+38. What will be the output of the following Python code and state the type of copy that is depicted?
+
+l1=[2, 4, 6, 8]
+l2=[1, 2, 3]
+l2=l1
+l2[0]=10
+print(l2)
+Print(l1)
+a) [2, 4, 6, 8], shallow copy
+b) [2, 4, 6, 8], deep copy
+c) [1, 2, 3], shallow copy
+d) [1, 2, 3], deep copy
+Answer: c
+Explanation: The code shown above depicts shallow copy and the output of the code is: [1, 2, 3].
+
+39. What will be the output of the following Python code?
+l1=[10, 20, 30]
+l2=l1
+id(l1)==id(l2)
+l2=l1.copy()
+id(l1)==id(l2)
+a) False, False
+b) False, True
+c) True, True
+d) True, False
+
+Answer: d
+Explanation: The first code shown above represents shallow copy. Hence the output of the expression id(l1)==id(l2) is True. The second code depicts deep copy. Hence the output of the expression id(l1)==id(l2) in the second case is False.
+
+40. What will be the output of the following Python code?
+
+l1=[1, 2, 3, [4]]
+l2=list(l1)
+id(l1)==id(l2)
+a) True
+b) False
+c) Error
+d) Address of l1
+
+Answer: b
+Explanation: The code shown above shows a nested list. A nested list will undergo shallow copy when the list as a whole undergoes deep copy. Hence the output of this code is False.

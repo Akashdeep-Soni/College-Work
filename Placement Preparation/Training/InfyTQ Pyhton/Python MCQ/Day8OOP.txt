@@ -1,0 +1,475 @@
+Q1.The circus manager wants to track the address of all the clowns in the circus.
+Our programmer has come up with two classes – Address and Clown.
+Help him to bring in "has-a" relationship between the two classes.
+
+1class Address:
+2 def __init__(self,address_line,city, state):
+3   self.address_line=address_line;
+4   self.city=city
+5   self.state=state
+6class Clown:
+7 def __init__(self,name,clown_address):
+8   self.name=name    
+9   ______________
+10def get_clown_address(self):
+11  return self.__clown_address
+
+Choose the appropriate statement for line no. 9 from the options given,
+consider clown’s address to be private.
+a)self.__clown_address=clown_address
+b)self.clown_address=clown_address
+c)self._clown_address=clown_address
+d)self.__clown_address
+Ans a
+
+Q2.What is the output of the following code snippet?
+
+class Mobile:
+    def __init__(self,brand,case):
+        self.brand=brand
+        self.case=case
+    def display(self):
+        print(self.case.color)
+
+class Case:
+    def __init__(self,color):
+        self.color=color
+c1=Case("Black")
+c2=Case("White")
+m1=Mobile("Hony",c1)
+c1.color="Green"
+m1.display()
+a)Black
+b)White
+c)Green
+d)None of the above
+Ans c
+
+Q3 What is the output of the following code snippet?
+
+class Customer:
+    def __init__(self,name,mobile):
+        self.name=name
+        self.mobile=mobile
+class Mobile:
+    def __init__(self,brand):
+        self.brand=brand
+    def unlock(self,cover):
+        print(cover.color)
+class Cover:
+    def __init__(self):
+        self.__color="red"
+Customer("Cus1",Mobile("Apple")).mobile.unlock(Cover())
+
+a)Error
+b)red
+c)None
+d)None of the above
+Ans a
+
+Q4.What is the output of the following code snippet?
+
+class Customer:
+    def __init__(self,name,mobile):
+        self.name=name
+        self.mobile=mobile
+class Mobile:
+    def __init__(self,brand):
+        self.brand=brand
+    def unlock(self,cover):
+        cover.color="yellow"
+class Cover:
+    def __init__(self):
+        self.color="red"
+Customer("Cus1",Mobile("Apple")).mobile.unlock(Cover())
+print(Cover().color)
+
+a)Error
+b)red
+c)yellow
+d)None of the above
+Ans b
+-----------------------------------------------------------
+
+Q5.What is the output of the following code snippet?
+
+class Parent:
+    def __init__(self,num):
+        self.__num=num
+    def get_num(self):
+        return self.__num
+class Child(Parent):
+    def show(self):
+        print("This is in child class")
+son=Child(100)
+print(son.get_num())
+son.show()
+
+a)100 This is in child class
+b)Error:Child class should have a constructor
+c)Error:Child object cannot invoke a parent method
+d)None of the above
+Ans a
+
+Q6.What is the output of the following code snippet?
+
+class Parent:
+    def __init__(self,num):
+        self.__num=num
+    def get_num(self):
+        return self.__num
+class Child(Parent):
+    def __init__(self,val,num):
+        self.__val=val
+    def get_val(self):
+        return self.__val
+son=Child(100,10)
+print("Parent: Num:",son.get_num())
+print("Child: Val:",son.get_val())
+a)10 100
+b)100 10
+c)Error
+d)None of the above
+Ans c
+
+Q7.What will be the output of the code given below?
+class A:
+    def __init__(self):
+        self.var1=100
+
+    def display1(self,var1):
+        print("class A :", self.var1)
+class B(A):
+    def display2(self,var1):
+        print("class B :", self.var1)
+
+obj=B()
+obj.display1(200)
+
+a)class B: 200
+b)class B: 100
+c)class A: 100
+d)class A: 200
+Ans c
+
+Q8 What is the output of the following code snippet?
+
+class Parent:
+    def __init__(self,num):
+      self.__num=num
+    def get_num(self):
+      return self.__num
+class Child(Parent):
+    def __init__(self,num,val):
+      super().__init__(num)
+      self.__val=val
+    def get_val(self):
+      return self.__val
+son=Child(100,200)
+print(son.get_num())
+print(son.get_val())
+
+a)100 200
+b)200 100
+c)None 200
+d)Error
+Ans a
+
+Q9. What is the output of the following code snippet?
+
+class Parent:
+    def __init__(self):
+        self.num=100
+
+class Child(Parent):
+    def __init__(self):
+        super().__init__()
+        self.var=200
+    def show(self):
+        print(self.num)
+        print(self.var)
+
+son=Child()
+son.show()
+
+a)Error
+b)100 200
+c)200 100
+d)None of the above
+Ans b
+
+Q10.Consider the following python function for representing the customers of a retail store.
+Objective of the code is to record the details of the customers.
+
+def customer_record(customer_type, name, discount, points_earned, membership_card_type):
+    if(customer_type=="Regular"):
+        record="Record Regular Customer:"+name+" "+(str)(discount)
+    elif(customer_type=="Privileged"):
+        record="Record Privileged Customer:"+name+" "+(str)(points_earned)
+    elif(customer_type=="Elite"):
+        record="Record Elite Customer:"+name+" "+membership_card_type
+    print(record)
+a)3 independent classes: Regular, Privileged, Elite
+b)1 class: Customer
+c)4 classes with inheritance: Base class: Customer; Child classes: Regular, Privileged; Grand Child of Privileged: Elite
+d)4 classes with inheritance: Base class: Customer; Child classes: Regular, Privileged, Elite
+Ans d
+
+Q11.What is the output of the following code snippet?
+
+class Parent:
+    def __init__(self):
+        self.__num=100
+
+    def show(self):
+        print("Parent:",self.__num)
+
+class Child(Parent):
+    def __init__(self):
+        super().__init__()
+        self.__var=10
+
+    def show(self):
+        print("Child:",self.__var)
+
+dad=Parent()
+dad.show()
+son=Child()
+son.show()
+a)Child: 10
+  Child: 10
+
+b)Parent: 100
+  Parent: 100
+
+c)Error: Methods in parent and child classes cannot be same
+
+d)Parent: 100
+  Child: 10
+
+Ans d
+
+Q12.What should be written in line 14 to get the output as mentioned below?
+Parent: 100
+Child: 10
+
+1class Parent:
+2   def __init__(self):
+3       self.__num=100
+4
+5   def show(self):
+6       print("Parent:",self.__num)
+7
+8class Child(Parent):
+9   def __init__(self):
+10      super().__init__()
+11      self.__var=10
+12
+13  def show(self):
+14      _________________
+15      print("Child:",self.__var)
+16
+17obj=Child()
+18obj.show()
+
+a)show()
+b)super().show()
+c)self.show()
+d)Parent.show()
+
+Ans b
+
+Q13. What will be the output of the code given below?
+class A:
+    def m1(self):
+        return 20
+class B(A):
+    def m1(self):
+        return 30
+    def m2(self):
+        return 40
+class C(B):
+    def m2(self):
+        return 20
+obj1=A()
+obj2=B()
+obj3=C()
+print(obj1.m1() + obj3.m1()+ obj3.m2())
+a)Error: Method m1 should be overridden in class C.
+b)80
+c)70
+d)90
+Ans c
+
+Q14.What will be the output of the code given below?
+class A:
+    def m1(self):
+        return 20
+class B(A):
+    def m1(self):
+        val=super().m1()+30
+        return val
+class C(B):
+    def m1(self):
+        val=self.m1()+20
+        return val
+obj=C()
+print(obj.m1())
+a)70
+b)20
+c)RunTimeError: Maximum recursion depth exceeded
+d)None of the above
+Ans c
+---------------------------------------------------------
+
+Q15.What is the output of the following code snippet?
+
+from abc import ABCMeta, abstractmethod
+class Parent(metaclass=ABCMeta):
+    def __init__(self):
+        self.num=100
+
+    @abstractmethod
+    def show(self):
+        pass
+
+class Child(Parent):
+    def __init__(self):
+        super().__init__()
+        self.__var=10
+
+    def show(self):
+        print(self.num)
+        print(self.__var)
+
+obj=Parent()
+obj.show()
+
+a)100
+  10
+b)10
+  100
+c)Error: abstract method should always have a valid statement other than pass
+d)Error: abstract class cannot be instantiated
+Ans d
+
+Q16.What is the output of the following code snippet?
+
+from abc import ABCMeta, abstractmethod
+class Parent(metaclass=ABCMeta):
+    def __init__(self):
+        self.num=5
+    @abstractmethod
+    def show(self):
+        pass
+
+class Child(Parent):
+    def __init__(self):
+        super().__init__()
+        self.__var=10
+    def show(self):
+        print(self.num)
+        print(self.__var)
+
+
+obj=Child()
+obj.show()
+
+a)10
+  5
+b)5
+  10
+c)Error: an abstract method cannot be overridden in child class
+d)Error: class Child should be abstract.
+Ans b
+
+Q17. What is the output of the following code snippet?
+
+from abc import ABCMeta, abstractmethod
+class Parent(metaclass=ABCMeta):
+    def __init__(self):
+        print(100)
+
+    @abstractmethod
+    def show(self):
+        pass
+
+class Child(Parent):
+    def __init__(self):
+        super().__init__()
+        print(10)
+
+obj=Child()
+obj.show()
+a)100
+  10
+b)Error: abstract class cannot be instantiated
+Ans b
+
+Q18. What is the output of the following code snippet?
+
+from abc import ABCMeta, abstractmethod
+class Parent(metaclass=ABCMeta):
+    def __init__(self):
+        self.num=5
+    @abstractmethod
+    def show(self):
+        pass
+
+class Child(Parent):
+    def __init__(self):
+        super().__init__()
+        self.var=10
+
+class GrandChild(Child):
+    def show(self):
+        print(self.num)
+        print(self.var)
+        print("This is possible")
+
+obj=GrandChild()
+obj.show()
+a)5
+  10
+  This is possible
+b)10
+  5
+  This is possible
+c)Error: Child class should override abstract method show() of Parent class
+d)Error: Child class should be declared as abstract
+Ans a
+Q19. What will be the output of the code given below?
+from abc import ABCMeta, abstractmethod
+class A(metaclass=ABCMeta):
+    def __init__(self):
+        print("123")
+    @abstractmethod
+    def method1(self):
+        pass
+class B(A):
+    def method2(self):
+        print("456")
+obj=B()
+obj.method2()
+a)123
+  456
+b)123
+c)456
+d)Error: class B cannot be instantiated
+Ans d
+Q.20 Which of these is a private data field?
+
+def Demo:
+def __init__(self):
+    __a = 1
+    self.__b = 1
+    self.__c__ = 1
+    __d__= 1
+a) __a
+b) __b
+c) __c__
+d) __d__
+View Answer
+
+Answer: b
+Explanation: Variables such as self.__b are private members of the class.

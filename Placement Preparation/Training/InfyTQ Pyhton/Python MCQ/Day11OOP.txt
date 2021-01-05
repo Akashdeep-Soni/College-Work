@@ -1,0 +1,308 @@
+1.What is the output of the following code?
+
+class EmployeeData:
+    def __init__(self, sal=0, age=0):
+    self.sal = sal
+    self.age = age
+
+    def getData(self):
+        print("{0}+{1}j".format(self.sal,self.age))
+
+empdata = EmployeeData()
+empdata.getData()
+
+a)Shows no data
+b)0+0j
+c)Shows error
+d)None of the above
+Ans b
+
+2.What is the output of the following code?
+class Test:
+     def __init__(self, a="Hello World"):
+           self.a=a
+ 
+     def display(self):
+         print(self.a)
+
+obj=test()
+obj.display()
+
+a)The program has an error because constructor can’t have default arguments
+b)Nothing is displayed
+c)“Hello World” is displayed
+d)The program has an error
+Ans d
+3.What is the output of the following code?
+
+class Change:
+    def __init__(self, x, y, z):
+       self.a = x + y + z
+ 
+x = Change(1,2,3)
+y = getattr(x, 'a')
+
+setattr(x, 'a', y+1)
+
+print(x.a)
+
+a) 6
+b) 7
+c) Error
+d) 0
+Ans b
+
+4.Is the following piece of code correct?
+class A:
+    def __init__(self, b):
+	self.b=b
+
+    def display(self):
+	print(self.b) 
+
+obj=A("Hello")
+del obj
+a)	True
+b)	False
+Ans a
+
+5.What is the output of the following code?
+class Test:
+    def __init__(self):
+       self.variable = 'Old'
+       self.Change(self.variable)
+
+    def Change(self, var):
+        var = 'New'
+
+obj=Test()
+print (obj.variable)
+
+a)“Old”
+b)“New”
+c)Shows error
+d)None of the above
+Ans a
+
+6.What is the output of the following code?
+class Fruits:
+    def __init__(self, price):
+        self.price = price
+
+obj=Fruits(50)
+ 
+obj.quantity=10
+obj.bags=2
+ 
+print(obj.quantity+len(obj.__dict__))
+
+a)12
+b)52
+c)13
+d)60
+Ans c
+7.What is the output of the following code?
+
+class Demo:
+    def __init__(self):
+        pass
+ 
+    def test(self):
+        print(__name__)
+ 
+obj = Demo()
+obj.test()
+
+a)__main__
+b)__name__
+c)main
+d)Shows error
+Ans a
+8.What is the output of following piece of code?
+class Stud:
+   def __init__(self, roll_no, grade):
+       self.roll_no = roll_no
+       self.grade = grade
+
+   def display (self):
+       print("Roll no : ", self.roll_no,  ", Grade: ", self.grade)
+
+stud1 = Stud(34, ‘S’)
+stud1.age=7
+print (hasattr(stud1, 'age'))
+
+a)True
+b)False
+c)No output
+d)Shows error
+Ans a
+9.What is the output of the following piece of code?
+
+class objects:
+    def __init__(self):
+        self.colour = None
+        self._shape = "Circle" 
+ 
+    def display(self, s):
+        self._shape = s
+
+obj=objects()
+print(obj._objects_shape)
+
+a)The program runs fine because name mangling has been properly implemented
+b)Error because the member shape is a protected member
+c)Error because the proper syntax for name mangling hasn’t been implemented
+d)Error because the member shape is a private member
+Ans b
+
+10.What will be the output of the following code?
+
+class Sales:
+    def __init__(self, id):
+        self.id = id
+        id = 100
+
+val = Sales(123)
+print (val.id)
+
+a)Syntax error
+b)100
+c)123
+d)None of the above
+Ans c
+11.Which of the following statements is true?
+a)A non-private method in a superclass can be overridden
+b)A subclass method can be overridden by the superclass
+c)A private method in a superclass can be overridden
+d)Overriding isn’t possible in Python
+Ans a
+
+12.Which of the following best describes inheritance?
+a)Ability of a class to derive members of another class as a part of its own definition
+b)Means of bundling instance variables and methods in order to restrict access to certain class members
+c)Focuses on variables and passing of variables to functions
+d)Allows for implementation of elegant software that is well designed and easily modified
+Ans a
+
+13.Which of the following statements is wrong about inheritance?
+a)Protected members of a class can be inherited
+b)The inheriting class is called a subclass
+c)Private members of a class can be inherited and accessed
+d)Inheritance is one of the features of OOP
+Ans c
+14.What is the output of the following code?
+
+class Demo:
+    def __new__(self):
+self.__init__(self)
+print("Demo's __new__() invoked")
+
+    def __init__(self):
+print("Demo's __init__() invoked")
+
+class Derived_Demo(Demo):
+    def __new__(self):
+print("Derived_Demo's __new__() invoked")
+
+    def __init__(self):
+print("Derived_Demo's __init__() invoked")
+
+def main():
+    obj1 = Derived_Demo()
+    obj2 = Demo()
+
+main()
+
+a)Derived_Demo’s __init__() invoked
+Derived_Demo’s __new__() invoked
+Demo’s __init__() invoked
+Demo’s __new__() invoked
+b)Derived_Demo’s __new__() invoked
+Demo’s __init__() invoked
+Demo’s __new__() invoked
+c)Derived_Demo’s __new__() invoked
+Demo’s __new__() invoked
+d)Derived_Demo’s __init__() invoked
+Demo’s __init__() invoked
+Ans b
+15.Suppose B is a subclass of A, to invoke the __init__ method in A from B, what is the line of code you should write?
+
+a)A.__init__(self)
+b)B.__init__(self)
+c)A.__init__(B)
+d)B.__init__(A)
+Ans a
+16.What is the output of the following code?
+
+class Test:
+    def __init__(self):
+    self.x = 0
+
+class Derived_Test(Test):
+     def __init__(self):
+     self.y = 1
+
+def main():
+    b = Derived_Test()
+    print(b.x,b.y)
+
+main()
+a)0 1
+b)0 0
+c)Error because class B inherits A but variable x isn’t inherited
+d)Error because when object is created, argument must be passed like Derived_Test(1)
+Ans c
+17.What is the output of the following code?
+
+class A():
+    def disp(self):
+print("A disp()")
+
+class B(A):
+    pass
+
+obj = B()
+obj.disp()
+
+a)Invalid syntax for inheritance
+b)Error because when object is created, argument must be passed
+c)Nothing is printed
+d)A disp()
+Ans d
+
+18.What is the output of the following piece of code?
+
+class A:
+    def __init__(self, x= 1):
+        self.x = x
+
+class der(A):
+    def __init__(self,y = 2):
+        super().__init__()
+        self.y = y
+
+def main():
+    obj = der()
+    print(obj.x, obj.y)
+
+main()
+
+a)Error, the syntax of the invoking method is wrong
+b)The program runs fine but nothing is printed
+c)1 0
+d)1 2
+Ans d
+19.Which of the following is not a type of inheritance?
+
+a)Single-level
+b)Double-level
+c)Multiple
+d)Multi-level
+ Ans b
+20.Which of the following statements is not true?
+
+a)A non-private method in a superclass can be overridden
+b)A derived class is a subset of superclass
+c)The value of a private variable in the superclass can be changed in the subclass
+d)When invoking the constructor from a subclass, the constructor of superclass is automatically invoked
+Ans c

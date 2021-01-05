@@ -1,0 +1,473 @@
+1. Which of the following is correct with respect to OOP concept in Python?
+
+A. Objects are real world entities while classes are not real.
+B. Classes are real world entities while objects are not real.
+C. Both objects and classes are real world entities.
+D. Both object and classes are not real.
+View Answer
+
+Ans : A
+Explanation: In OOP, classes are basically the blueprint of the objects. They doesnot have physical existence.
+
+
+2. How many objects and reference variables are there for the given Python code?
+
+class A:
+	print("Inside class")
+A()
+A()
+obj=A()
+A. 2 and 1
+B. 3 and 3
+C. 3 and 1
+D. 3 and 2
+View Answer
+
+Ans : C
+Explanation: obj is the reference variable here and an object will be created each time A() is called.So there will be 3 objects created.
+
+
+3. Which of the following is False with respect Python code?
+
+class Student:
+
+	def __init__(self,id,age):
+
+		self.id=id
+
+		self.age=age
+
+std=Student(1,20)
+
+A. "std" is the reference variable for object Student(1,20)
+B. id and age are called the parameters.
+C. Every class must have a constructor.
+D. None of the above
+View Answer
+
+Ans : C
+Explanation: It is not mandatory for a class to have a constructor.
+
+
+4. What will be the output of below Python code?
+
+class Student:
+
+	def __init__(self,name,id):
+
+		self.name=name
+
+		self.id=id
+
+		print(self.id)
+
+std=Student("Simon",1)
+
+std.id=2
+
+print(std.id)
+
+A. 1
+   1
+B. 1
+   2
+C. 2
+   1
+D. 2
+   2
+View Answer
+
+Ans : B
+Explanation: When object with id =1 is created for Student, constructor is invoked and it prints 1. Later, id has been changed to 2, so next print statement prints 2.
+5. What will be the output of below Python code?
+
+class A():
+
+	def __init__(self,count=100):
+
+		self.count=count
+
+
+
+obj1=A()
+
+obj2=A(102)
+
+print(obj1.count)
+
+print(obj2.count)
+
+A. 100
+   100
+B. 100
+   102
+C. 102
+   102
+D. Error
+View Answer
+
+Ans : B
+Explanation: By default,the value of "count" is 100, so obj1.count=100. For second object, value of "count" is 102, so obj2.count=102.
+
+
+6. Which of the following is correct?
+
+class A:
+    def __init__(self,name):
+        self.name=name
+a1=A("john")
+a2=A("john")
+A. id(a1) and id(a2) will have same value.
+B. id(a1) and id(a2) will have different values.
+C. Two objects with same value of attribute cannot be created.
+D. None of the above
+View Answer
+
+Ans : B
+Explanation: Although both a1 and a2 have same value of attributes,but these two point to two different object. Hence, their id will be different.
+
+
+7. Which of the following is correct?
+
+class A:
+
+	def __init__(self):
+
+		self.count=5
+
+		self.count=count+1
+
+a=A()
+
+print(a.count)
+
+A. 5
+B. 6
+C. 0
+D. Error
+View Answer
+
+Ans : D
+Explanation: It will throw an error as inside constructor, "count" is not defined.
+
+
+8. Which of the following is correct?
+
+class Book:
+	def __init__(self,author):
+		self.author=author
+book1=Book("V.M.Shah")
+book2=book1
+A. Both book1 and book2 will have reference to two different objects of class Book.
+B. id(book1) and id(book2) will have same value.
+C. It will throw error as multiple references to same object is not possible.
+D. None of the above
+View Answer
+
+Ans : B
+Explanation: book1 and book2 will reference to the same object. Hence, id(book1) and id(book2) will have same value.
+
+
+9. In python, what is method inside class?
+
+A. attribute
+B. object
+C. argument
+D. function
+View Answer
+
+Ans : D
+Explanation: In OOP of Python, function is known by "method".
+
+
+10. What will be the output of below Python code?
+
+class A:
+
+	def __init__(self,num):
+
+		num=3
+
+		self.num=num
+
+	def change(self):
+
+		self.num=7
+
+a=A(5)
+
+print(a.num)
+
+a.change()
+
+print(a.num)
+
+A. 5
+   7
+B. 5
+   5
+C. 3
+   3
+D. 3
+   7
+View Answer
+
+Ans : D
+Explanation: Inside constructor, self.num=3. First print statement prints 3. As, method change() is invoked, self.num=7 and hence second print statement prints 7.
+
+11. Which of the following represents a distinctly identifiable entity in the real world?
+A. A class
+B. An object
+C. A method
+D. A data field
+
+
+Answer. B
+ 
+
+12. Which of the following represents a template, blueprint, or contract that defines objects of the same type?
+A. A class
+B. An object
+C. A method
+D. A data field
+
+
+Answer. A
+ 
+
+13. Which of the following keywords mark the beginning of the class definition?
+A. def
+B. return
+C. class
+D. All of the above.
+
+Answer c
+ 
+
+14. Which of the following is required to create a new instance of the class?
+A. A constructor
+B. A class
+C. A value-returning method
+D. A None method
+
+
+Answer. A
+ 
+
+15. Which of the following statements is most accurate for the declaration x = Circle()?
+A. x contains an int value.
+B. x contains an object of the Circle type.
+C. x contains a reference to a Circle object.
+D. You can assign an int value to x.
+
+Answer. C
+ 
+
+16. What will be the output of the following code snippet?
+class Sales:
+    def __init__(self, id):
+        self.id = id
+        id = 100
+
+val = Sales(123)
+print (val.id)
+A. SyntaxError, this program will not run
+B. 100
+C. 123
+D. None of the above
+
+Answer. C
+ 
+
+17. Which of the following statements are correct?
+A. A reference variable is an object.
+B. A reference variable refers to an object.
+C. An object may contain other objects.
+D. None
+
+Answer. B 
+ 
+18. What will be the output of the following?
+s = "\t\tWelcome\n"
+print(s.strip())
+A. \t\tWelcome\n
+B. Welcome\n
+C. \t\tWELCOME
+D. Welcome
+
+
+Answer. D
+ 
+
+19. What will be the output of the following code snippet?
+class Person:
+    def __init__(self, id):
+        self.id = id
+
+sam = Person(100)
+
+sam.__dict__['age'] = 49
+
+print (sam.age + len(sam.__dict__))
+A. 1
+B. 2
+C. 49
+D. 50
+E. 51
+
+
+Answer. E
+ 
+
+20. Which of the following can be used to invoke the __init__ method in B from A, where A is a subclass of B?
+A. super().__init__()
+B. super().__init__(self)
+C. B.__init__()
+D. super.__init__(self)
+
+
+Answer. A
+
+
+21. Which of the following statements are correct about the given code snippet?
+class A:
+    def __init__(self, i = 0):
+        self.i = i
+
+class B(A):
+    def __init__(self, j = 0):
+        self.j = j
+
+def main():
+    b = B()
+    print(b.i)
+    print(b.j)
+
+main()
+A. Class B inherits A, but the data field “i” in A is not inherited.
+B. Class B inherits A, thus automatically inherits all data fields in A.
+C. When you create an object of B, you have to pass an argument such as B(5).
+D. The data field “j” cannot be accessed by object b.
+
+
+Answer. A
+ 
+
+22. Which of the following statements is true?
+A. By default, the __new__() method invokes the __init__ method.
+B. The __new__() method is defined in the object class.
+C. The __init__() method is defined in the object class.
+D. All of the above
+
+
+Answer.  D 
+ 
+
+23. What will be the output of the following code snippet?
+class A:
+    def __init__(self):
+        self.calcI(30)
+        print("i from A is", self.i)
+
+    def calcI(self, i):
+        self.i = 2 * i;
+
+class B(A):
+    def __init__(self):
+        super().__init__()
+        
+    def calcI(self, i):
+        self.i = 3 * i;
+
+b = B()
+A. The __init__ method of only class B gets invoked.
+B. The __init__ method of class A gets invoked and it displays “i from A is 0”.
+C. The __init__ method of class A gets invoked and it displays “i from A is 60”.
+D. The __init__ method of class A gets invoked and it displays “i from A is 90”.
+
+Answer. D
+ 
+
+24. What will be the output of the following code snippet?
+class A:
+    def __init__(self):
+        self.calcI(30)
+        
+    def calcI(self, i):
+        self.i = 2 * i;
+
+class B(A):
+    def __init__(self):
+        super().__init__()
+        print("i from B is", self.i)
+        
+    def calcI(self, i):
+        self.i = 3 * i;
+
+b = B()
+A. The __init__ method of only class B gets invoked.
+B. The __init__ method of class A gets invoked and it displays “i from B is 0”.
+C. The __init__ method of class A gets invoked and it displays “i from B is 60”.
+D. The __init__ method of class A gets invoked and it displays “i from B is 90”.
+
+
+Answer. D
+ 
+
+25. Which of the following statements can be used to check, whether an object “obj” is an instance of class A or not?
+A. obj.isinstance(A)
+B. A.isinstance(obj)
+C. isinstance(obj, A)
+D. isinstance(A, obj)
+
+
+Answer. C
+ 
+
+26. What relationship correctly fits for University and Professor?
+A. association
+B. composition
+C. inheritance
+D. All of the above
+
+
+Answer. B
+ 
+
+27. What relationship is suited for Course and Faculty?
+A. association
+B. composition
+C. inheritance
+D. None of the above
+
+
+Answer. A
+ 
+
+28. What relationship is best suited for Employee and Person?
+A. association
+B. composition
+C. inheritance
+D. None of the above
+
+
+Answer. C
+ 
+
+29. What relationship is best suited for House and Door?
+A. association
+B. composition
+C. inheritance
+D. All of the above
+
+
+Answer. B
+ 
+
+30. What relationship is appropriate for Fruit and Papaya?
+A. association
+B. composition
+C. inheritance
+D. All of the above
+
+Answer. C

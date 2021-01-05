@@ -1,0 +1,446 @@
+Q1:What is the output of the following?
+
+x = "abcdef"
+i = "a"
+while i in x:
+    x = x[:-1]
+    print(i, end = " ")
+A. i i i i i i
+B. a a a a a a
+C. a a a a a
+D. none of the mentioned
+Answer: Option B
+
+Q2:What is the output of the following code?
+
+import datetime
+import time
+now = datetime.datetime.now()
+print (now.strftime("%a"))
+
+A. Displays current month name with three alphabets. 
+B. Displays current month name with full month name. 
+C. Error
+
+Answer: Option A
+
+Q3: What is the output of the following code(consider current year 2020)?
+
+import datetime
+import time
+print (now.year)
+
+
+A. 20
+B. 2020
+C. error
+ 
+Answer: Option C
+
+Q4:What is the output of the following code(consider current date)?
+
+import datetime
+import time
+month = datetime.datetime.now().strftime("%m")
+print (month)
+
+
+A. displays current month with two digits
+B. display current month with three alphabets
+C. display current month with full month name
+D. none of the mentioned
+Answer: Option A
+
+Q5..: What is the output of the following?
+
+from datetime import date
+print((date(2015, 8, 15) - date(2015, 8, 12)).days)
+
+
+A. 3
+B. 0
+C. 3 3
+D. error
+Answer: Option A
+
+6. What will be the output of the following Python code?
+r = [11, 12, 13, 14, 15, 16, 17, 18, 19]
+A = [[0, 10, 20],
+               [30, 40, 50],
+               [60, 70, 80]]
+for row in A:
+	for col in row:
+		r.append(col+10)
+r
+a) [11, 12, 13, 14, 15, 16, 17, 18, 19, 10, 20, 30, 40, 50, 60, 70, 80, 90]
+b) [10, 20, 30, 40, 50, 60, 70, 80, 90]
+c) [11, 12, 13, 14, 15, 16, 17, 18, 19]
+d) [0, 10, 20, 30, 40, 50, 60, 70, 80]
+
+Answer: a
+7. What will be the output of the following Python code?
+A = [[1, 2, 3],
+     [4, 5, 6],
+     [7, 8, 9]]
+B = [[3, 3, 3],
+     [4, 4, 4],
+     [5, 5, 5]]
+>>>[[col1 * col2 for (col1, col2) in zip(row1, row2)] for (row1, row2) in zip(A, B)]
+a) [0, 30, 60, 120, 160, 200, 300, 350, 400]
+b) [[3, 6, 9], [16, 20, 24], [35, 40, 45]]
+c) No output
+d) Error
+
+Answer: b
+8. What will be the output of the following Python code?
+A = [[1, 2, 3],
+     [4, 5, 6],
+     [7, 8, 9]]
+B = [[3, 3, 3],
+     [4, 4, 4],
+     [5, 5, 5]]
+print(zip(A, B))
+a) Address of the zip object
+b) Address of the matrices A and B
+c) No output
+d) [3, 6, 9, 16, 20, 24, 35, 40, 45]
+
+Answer: a
+9. Read the information given below carefully and write a list comprehension such that the output is: [‘e’, ‘o’]
+w="hello"
+v=('a', 'e', 'i', 'o', 'u')
+a) [x for w in v if x in v]
+b) [x for x in w if x in v]
+c) [x for x in v if w in v]
+d) [x for v in w for x in w]
+
+Answer: b
+10. What will be the output of the following Python code?
+>>>[ord(ch) for ch in 'abc']
+a) [97, 98, 99]
+b) [‘97’, ‘98’, ‘99’]
+c) [65, 66, 67]
+d) Error
+
+Answer: a
+
+11. What will be the output of the following Python code?
+t=32.00
+print[round((x-32)*5/9) for x in t]
+a) [0]
+b) 0
+c) [0.00]
+d) Error
+
+Answer: d
+
+12. Write a list comprehension for producing a list of numbers between 1 and 1000 that are divisible by 3.
+a) [x in range(1, 1000) if x%3==0]
+b) [x for x in range(1000) if x%3==0]
+c) [x%3 for x in range(1, 1000)]
+d) [x%3=0 for x in range(1, 1000)]
+
+Answer: b
+13. Write a list comprehension equivalent for the Python code shown below.
+for i in range(1, 101):
+	if int(i*0.5)==i*0.5:
+		print(i)
+a) [i for i in range(1, 100) if int(i*0.5)==(i*0.5)]
+b) [i for i in range(1, 101) if int(i*0.5)==(i*0.5)]
+c) [i for i in range(1, 101) if int(i*0.5)=(i*0.5)]
+d) [i for i in range(1, 100) if int(i*0.5)=(i*0.5)]
+
+Answer: b
+
+14. What is the list comprehension equivalent for: list(map(lambda x:x**-1, [1, 2, 3]))?
+a) [1|x for x in [1, 2, 3]]
+b) [-1**x for x in [1, 2, 3]]
+c) [x**-1 for x in [1, 2, 3]]
+d) [x^-1 for x in range(4)]
+
+Answer: c
+15. Write a list comprehension to produce the list: [1, 2, 4, 8, 16……212].
+a) [(2**x) for x in range(0, 13)]
+b) [(x**2) for x in range(1, 13)]
+c) [(2**x) for x in range(1, 13)]
+d) [(x**2) for x in range(0, 13)]
+
+Answer: a
+16. Which of the following is correct with respect to OOP concept in Python?
+
+A. Objects are real world entities while classes are not real.
+B. Classes are real world entities while objects are not real.
+C. Both objects and classes are real world entities.
+D. Both object and classes are not real.
+View Answer
+
+Ans : A
+Explanation: In OOP, classes are basically the blueprint of the objects. They doesnot have physical existence.
+
+
+17. How many objects and reference variables are there for the given Python code?
+
+class A:
+	print("Inside class")
+A()
+A()
+obj=A()
+A. 2 and 1
+B. 3 and 3
+C. 3 and 1
+D. 3 and 2
+View Answer
+
+Ans : C
+Explanation: obj is the reference variable here and an object will be created each time A() is called.So there will be 3 objects created.
+
+
+18. Which of the following is False with respect Python code?
+
+class Student:
+
+	def __init__(self,id,age):
+
+		self.id=id
+
+		self.age=age
+
+std=Student(1,20)
+
+A. "std" is the reference variable for object Student(1,20)
+B. id and age are called the parameters.
+C. Every class must have a constructor.
+D. None of the above
+View Answer
+
+Ans : C
+Explanation: It is not mandatory for a class to have a constructor.
+
+
+19. What will be the output of below Python code?
+
+class Student:
+
+	def __init__(self,name,id):
+
+		self.name=name
+
+		self.id=id
+
+		print(self.id)
+
+std=Student("Simon",1)
+
+std.id=2
+
+print(std.id)
+
+A. 1
+   1
+B. 1
+   2
+C. 2
+   1
+D. 2
+   2
+View Answer
+
+Ans : B
+Explanation: When object with id =1 is created for Student, constructor is invoked and it prints 1. Later, id has been changed to 2, so next print statement prints 2.
+20. What will be the output of below Python code?
+
+class A():
+
+	def __init__(self,count=100):
+
+		self.count=count
+
+
+
+obj1=A()
+
+obj2=A(102)
+
+print(obj1.count)
+
+print(obj2.count)
+
+A. 100
+   100
+B. 100
+   102
+C. 102
+   102
+D. Error
+View Answer
+
+Ans : B
+Explanation: By default,the value of "count" is 100, so obj1.count=100. For second object, value of "count" is 102, so obj2.count=102.
+
+
+21. Which of the following is correct?
+
+class A:
+    def __init__(self,name):
+        self.name=name
+a1=A("john")
+a2=A("john")
+A. id(a1) and id(a2) will have same value.
+B. id(a1) and id(a2) will have different values.
+C. Two objects with same value of attribute cannot be created.
+D. None of the above
+View Answer
+
+Ans : B
+Explanation: Although both a1 and a2 have same value of attributes,but these two point to two different object. Hence, their id will be different.
+
+
+22. Which of the following is correct?
+
+class A:
+
+	def __init__(self):
+
+		self.count=5
+
+		self.count=count+1
+
+a=A()
+
+print(a.count)
+
+A. 5
+B. 6
+C. 0
+D. Error
+View Answer
+
+Ans : D
+Explanation: It will throw an error as inside constructor, "count" is not defined.
+
+
+23. Which of the following is correct?
+
+class Book:
+	def __init__(self,author):
+		self.author=author
+book1=Book("V.M.Shah")
+book2=book1
+A. Both book1 and book2 will have reference to two different objects of class Book.
+B. id(book1) and id(book2) will have same value.
+C. It will throw error as multiple references to same object is not possible.
+D. None of the above
+View Answer
+
+Ans : B
+Explanation: book1 and book2 will reference to the same object. Hence, id(book1) and id(book2) will have same value.
+
+
+24. In python, what is method inside class?
+
+A. attribute
+B. object
+C. argument
+D. function
+View Answer
+
+Ans : D
+Explanation: In OOP of Python, function is known by "method".
+
+
+25. What will be the output of below Python code?
+
+class A:
+
+	def __init__(self,num):
+
+		num=3
+
+		self.num=num
+
+	def change(self):
+
+		self.num=7
+
+a=A(5)
+
+print(a.num)
+
+a.change()
+
+print(a.num)
+
+A. 5
+   7
+B. 5
+   5
+C. 3
+   3
+D. 3
+   7
+View Answer
+
+Ans : D
+Explanation: Inside constructor, self.num=3. First print statement prints 3. As, method change() is invoked, self.num=7 and hence second print statement prints 7.
+26. What does f(1782818) return, for the following function definition:
+def f(x):
+  d=0
+  while x > 1:
+    (d,x) = (d+1,x/10)
+  return(d)
+
+A. 4
+B. 5 
+C. 6
+D. 7
+
+Ans. D
+
+27. What can we say about a number n if g(n) returns True for the function g given below?
+
+def g(n):
+  for i in range(2,n):
+    if n%i == 0:
+       return(False)
+  return(True)
+
+A. n is a prime number.
+B. n is a composite number.
+C. n is multiple of 2.
+D. None of the above.
+
+Ans. A
+
+28. Given the following permutation of a,b,c,d,e,f,g,h,i,j, what is the next permutation in lexicographic (dictionary) order? 
+	fjadbihgec
+
+A. fjacdbeghi
+B. fjadcbeghi
+C. fjacdbeghi
+D. fjabcdeghi
+
+Ans. B
+
+29. Suppose we add this function foo() to the class Tree that implements search trees. For a name mytree with a value of type Tree, what would mytree.foo() compute?
+    def foo(self):
+        if self.isempty():
+            return(0)
+        elif self.isleaf():
+            return(1)
+        else:
+            return(1 + max(self.left.foo(),self.right.foo()))
+A. The number of nodes in mytree.
+B. The largest value in mytree.
+C. The length of the longest path from root to leaf in mytree.
+D. The number of paths in mytree
+
+Ans. C
+
+30. Which of the following is false?
+
+A. 2-3 tree requires less storage than the BST
+B. lookup in 2-3 tree is more efficient than in BST
+C. 2-3 tree is shallower than BST
+D. 2-3 tree is a balanced tree
+
+Ans. A

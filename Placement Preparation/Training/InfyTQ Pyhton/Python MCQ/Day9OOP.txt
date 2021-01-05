@@ -1,0 +1,341 @@
+Q1. What will be the output of the code given below?
+from abc import ABCMeta, abstractmethod
+class A(metaclass=ABCMeta):
+    def __init__(self):
+        print("123")
+    @abstractmethod
+    def method1(self):
+        pass
+class B(A):
+    def method2(self):
+        print("456")
+obj=B()
+obj.method2()
+a)123
+  456
+b)123
+c)456
+d)Error: class B cannot be instantiated
+Ans d
+-------------------------------------------------------------
+Topic : Exception Handling
+
+Q2.What is the output of the below program?
+
+class InvalidAccountException(Exception):
+    pass
+class Account:
+    account_list=[1001,1002,1003,1004]
+    def validate_account(self,account_id):
+        status=0
+        for acct_id in self.account_list:
+            if(account_id==acct_id):
+                status=1
+                break
+        if(status!=0):
+            return True
+        else:
+            raise InvalidAccountException
+try:
+    account1=Account()
+    account1.validate_account(1006)
+    print("Valid account number")
+except InvalidAccountException:
+    print("Invalid account number") 
+a)Valid account number
+b)Invalid account number
+c)Error: Element not found in list
+d)None of the above
+Ans b
+
+Q3.What will be the output of the code given below?
+class NameLengthException(Exception):
+    pass
+class EmployeeIdException(Exception):
+    pass
+class Employee:
+    __trials=0
+    def __init__(self,emp_id,emp_name):
+        self.__emp_name=emp_name
+        self.__emp_id=emp_id
+    def validate_name(self):
+        try:
+            if(len(self.__emp_name) < 4):
+                Employee.__trials=Employee.__trials+1
+                raise NameLengthException
+            if( not(self.__emp_id.startswith('E'))):
+                raise EmployeeIdException
+        except NameLengthException:
+            Employee.__trials=Employee.__trials+1
+            print(Employee.__trials)
+        except EmployeeIdException:
+            Employee.__trials=Employee.__trials+1
+            print(Employee.__trials)
+emp1=Employee('E1001','Tom')
+emp1.validate_name()
+emp2=Employee('1001','Tomy')
+emp2.validate_name()
+a)2
+  3
+b)2
+  1
+c)3
+d)2
+Ans a
+
+Q4.What will be the output of the code given below?
+class Project:
+    def __init__(self,employee_list):
+        self.__employee_list=employee_list
+
+    def validate_employee(self,employee_id):
+        try:
+            if employee_id not in self.__employee_list:
+                raise Exception
+                print("1")
+        except Exception:
+            print("2")
+
+project1=Project([1001,1002,1003])
+project1.validate_employee(1005)
+print("3")
+a)2
+b)2
+  3
+c)2
+  1
+  3
+d)3
+Ans b
+
+Q5.What will be the output of the code given below?
+class NotEligibleException(Exception):
+    pass
+class Employee:
+    def __init__(self,salary):
+        self.__salary=salary
+
+    def check_salary(self):
+        if(self.__salary < 2000):
+            raise NotEligibleException
+            return False
+        else:
+            return True
+
+emp1=Employee(5000)
+emp2=Employee(1000)
+try:
+    status=emp1.check_salary()
+    print(status)
+    status=emp2.check_salary()
+    print(status)
+except NotEligibleException:
+    print("Not Eligible")
+
+a)True
+  Not Eligible
+
+b)True
+  False
+
+c)True
+  Not Eligible
+  False
+d)None of the above
+Ans a
+
+Q6. What will be the output of the code given below?
+class NotEligibleException(Exception):
+    pass
+class Employee:
+    def __init__(self,salary):
+        self.__salary=salary
+
+    def check_salary(self):
+        try:
+            if(self.__salary < 2000):
+                raise NotEligibleException
+            else:
+                return True
+        except NotEligibleException:
+            print("1")
+            raise NotEligibleException
+
+emp1=Employee(1000)
+try:
+    status=emp1.check_salary()
+    print("2")
+except NotEligibleException:
+    print("3")
+a)2
+
+b)Error: An exception cannot be raised from except block of another exception
+
+c)Error: Two exceptions (inside a method and calling block) cannot have the same name
+
+d)1
+  3
+Ans d
+
+Q7. What will be the output of the code given below?
+class InvalidEmployeeException(Exception):
+    pass
+class Project:
+    def __init__(self,employee_list):
+        self.__employee_list=employee_list
+
+    def validate_employee(self,employee_id):
+        flag=False
+        for key in self.__employee_list:
+            if(key==employee_id):
+                flag=True
+        if(flag==False):
+            raise InvalidEmployeeException
+            print("1")
+        return True
+
+project1=Project([1001,1002,1003])
+try:
+    print(project1.validate_employee(1005))
+except Exception:
+    print("2")
+except InvalidEmployeeException:
+    print("3")
+a)2
+
+b)2
+  3
+c)3
+
+d)Error: Except should be the last block
+Ans a
+Q8: What is setattr() used for?
+A. To access the attribute of the object
+B. To set an attribute
+C. To check if an attribute exists or not
+D. To delete an attribute
+Answer: Option B
+
+Q9: What are the methods which begin and end with two underscore characters called?
+A. Special methods
+B. In-built methods
+C. User-defined methods
+D. Additional methods
+Answer: Option A
+
+Q10:Which of these is a private data field?
+def Demo:
+def __init__(self):
+    __a = 1
+    self.__b = 1
+    self.__c__ = 1
+    __d__= 1
+A. __a
+B. __b
+C. __c__
+D. __d__
+Answer: Option B
+
+Q11:When will the else part of try-except-else be executed?
+A. always
+B. when an exception occurs
+C. when no exception occurs
+D. when an exception occurs in to except block
+Answer: Option C
+
+Q12:What is the output of the code shown below?
+
+def f(x):
+    yield x+1
+    print("test")
+    yield x+2
+g=f(9)
+A. Error
+B. test
+C. test1012
+D. No output
+Answer: Option D
+
+Q13: The output of the code shown below is:
+
+int('65.43')
+
+A. ImportError
+B. ValueError
+C. TypeError
+D. NameError
+Answer: Option B
+
+Q14..:Which of the following statement(s) is(are) true?
+A. Polymorphism means having more than one form.
+B. Class is a template for object.
+C. inheritance shows IS A relationship
+D. All of the above
+
+Answer: Option D
+
+Q15:Which function overloads the == operator?
+A. __eq__()
+B. __equ__()
+C. __isequal__()
+D. none of the mentioned
+Answer: Option A
+
+
+Q16:What is the output of the following piece of code?
+class Demo:
+    def __init__(self):
+        self.x = 1
+    def change(self):
+        self.x = 10
+class Demo_derived(Demo):
+    def change(self):
+        self.x=self.x+1
+        return self.x
+def main():
+    obj = Demo_derived()
+    print(obj.change())
+ 
+main()
+A. 11
+B. 2
+C. 1
+D. An exception is thrown
+Answer: Option B
+
+Q17:  What is the output of the code shown below?
+
+def f1():
+    x=100
+    print(x)
+x=+1
+f1()
+
+A. Error
+B. 100
+C. 101
+D. 99
+Answer: Option B
+
+Q18:On assigning a value to a variable inside a function, it automatically becomes a global variable. State whether true or false.
+A. True
+B. False
+
+Answer: Option B
+
+Q 19: Which of the following statement(s) is(are) true?
+A. List is an object
+B. int is an object
+C. float is an object
+D. All of the above
+Answer: Option D
+
+Q 20: What is the output of the code shown below?
+l1=[1, 2, 3, [4]]
+l2=list(l1)
+print(id(l1)==id(l2))
+A. True
+B. False
+C. Error
+D. Address of l1
+Answer: Option B
